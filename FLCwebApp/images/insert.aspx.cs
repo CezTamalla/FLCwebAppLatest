@@ -13,17 +13,17 @@ namespace FLCwebApp.images
 {
     public partial class Add : System.Web.UI.Page
     {
-        MySqlConnection con = new MySqlConnection("datasource=localhost;port=3306;username=root;password=ctamalla;database=flc");
-        MySqlCommand com = new MySqlCommand();
-        DataTable dt = new DataTable();
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            id_txt.Focus();
-        }
+        //MySqlConnection con = new MySqlConnection("datasource=localhost;port=3306;username=root;password=ctamalla;database=flc");
+        //MySqlCommand com = new MySqlCommand();
+        //DataTable dt = new DataTable();
+        //protected void Page_Load(object sender, EventArgs e)
+        //{
+        //    id_txt.Focus();
+        //}
 
         protected void insert_Click(object sender, EventArgs e)
         {
-            con.Open();
+            //con.Open();
 
             if (FileUpload1.HasFile)
             {
@@ -31,16 +31,16 @@ namespace FLCwebApp.images
                 string path = @"images\" + FileUpload1.FileName;
                 FileUpload1.SaveAs(Server.MapPath("~") + @"\" + path);
 
-                com = new MySqlCommand("Update inventory set image='" + path + "' where ID='" + id_txt.Text + "'",con);
-                com.ExecuteNonQuery();
-                con.Close();   
-                Label1.Visible = true;
-                Label1.Text = "Image Saved.";
-            }
-            else
-            {
-                System.Windows.Forms.MessageBox.Show("Failed.");
-            }
+                //    com = new MySqlCommand("Update inventory set image='" + path + "' where ID='" + id_txt.Text + "'",con);
+                //    com.ExecuteNonQuery();
+                //    con.Close();   
+                //    Label1.Visible = true;
+                //    Label1.Text = "Image Saved.";
+                //}
+                //else
+                //{
+                //    System.Windows.Forms.MessageBox.Show("Failed.");
+                //}
 
                 //byte[] arrImage;
                 //System.IO.MemoryStream mstream = new System.IO.MemoryStream();
@@ -61,33 +61,33 @@ namespace FLCwebApp.images
 
                 //string strname = FileUpload1.FileName.ToString();
                 //FileUpload1.PostedFile.SaveAs(Server.MapPath("~/images/") + strname);
-                //    Connection.dbCommand("Update 'flc'.'inventory' set 'image'='" + path + "' where ('ID'='" + id_txt.Text + "');");
-                //    System.Windows.Forms.MessageBox.Show("Successfully Saved.");
+                Connection.dbCommand("Update inventory set image='" + path + "' where ID='" + id_txt.Text + "'");
+                System.Windows.Forms.MessageBox.Show("Successfully Saved.");
 
-                //}
-                //else
-                //{
-                //    System.Windows.Forms.MessageBox.Show("Please upload image.");
-                //}
-
-
-                //    }
-
-                //    protected void FileUpload1_Load(object sender, EventArgs e)
-                //    {
-                //        //BitmapImage currentBitmapImage = new BitmapImage();
-
-                //        //currentBitmapImage.BeginInit();
-                //        //currentBitmapImage.UriSource = imageUri;
-                //        //currentBitmapImage.EndInit();
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("Please upload image.");
+            }
 
 
+            //    }
 
-                //        //imgMain.Source = currentBitmapImage;
+            //    protected void FileUpload1_Load(object sender, EventArgs e)
+            //    {
+            //        //BitmapImage currentBitmapImage = new BitmapImage();
 
-                //        //System.Drawing.Bitmap bmp = GetBitmap(imgMain);
-                //        //bmp.Save(imagepath, System.Drawing.Imaging.ImageFormat.Jpeg);
-            
+            //        //currentBitmapImage.BeginInit();
+            //        //currentBitmapImage.UriSource = imageUri;
+            //        //currentBitmapImage.EndInit();
+
+
+
+            //        //imgMain.Source = currentBitmapImage;
+
+            //        //System.Drawing.Bitmap bmp = GetBitmap(imgMain);
+            //        //bmp.Save(imagepath, System.Drawing.Imaging.ImageFormat.Jpeg);
+
         }
     }
 }

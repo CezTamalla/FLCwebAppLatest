@@ -21,6 +21,7 @@ namespace FLCwebApp
             //sa.Fill(dt);
             //ListView1.DataSource = dt;
             //ListView1.DataBind();
+            Connection.dbCommand("Select ");
         }
     }
 }
