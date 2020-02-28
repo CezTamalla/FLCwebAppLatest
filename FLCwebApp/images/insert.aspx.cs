@@ -44,7 +44,7 @@ namespace FLCwebApp.images
 
                 //byte[] arrImage;
                 //System.IO.MemoryStream mstream = new System.IO.MemoryStream();
-                //FileUpload1.Image1.Save(mstream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                //FileUpload1.Image1.Save(mstream, System.Drawing.Imaging.ImageFormat.png);
                 //arrImage = mstream.GetBuffer();
                 //UInt32 filesize;
 
