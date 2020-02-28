@@ -102,10 +102,13 @@
     <Content Include="images\alcologneSho250.png" />
     <Content Include="images\glassC600ml.png" />
     <Content Include="images\logo.png" />
+    <Content Include="images\placeholder.png" />
     <Content Include="images\tbcLem500ml.png" />
     <Content Include="images\tbcPine500ml.png" />
     <Content Include="images\tbcSampa250ml.png" />
     <Content Include="images\TBC_Lem250.png" />
+    <Content Include="productDetails.aspx" />
+    <Content Include="products.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -130,6 +133,20 @@
     </Compile>
     <Compile Include="images\insert.aspx.designer.cs">
       <DependentUpon>insert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="productDetails.aspx.cs">
+      <DependentUpon>productDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="productDetails.aspx.designer.cs">
+      <DependentUpon>productDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products.aspx.cs">
+      <DependentUpon>products.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products.aspx.designer.cs">
+      <DependentUpon>products.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

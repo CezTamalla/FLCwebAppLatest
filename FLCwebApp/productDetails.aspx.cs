@@ -4,17 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
-using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
-
+using System.Data;
 
 namespace FLCwebApp
 {
-    public partial class home : System.Web.UI.Page
+    public partial class productDetails : System.Web.UI.Page
     {
-        
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.IsPostBack)
@@ -22,6 +18,7 @@ namespace FLCwebApp
                 this.BindListview();
             }
         }
+
         private void BindListview()
         {
             MySqlConnection con = new MySqlConnection("datasource=localhost;port=3306;username=root;password=ctamalla;database=flc");
@@ -34,15 +31,8 @@ namespace FLCwebApp
             MySqlDataAdapter sa = new MySqlDataAdapter(com);
             DataTable dt = new DataTable();
             sa.Fill(dt);
-            ListView1.DataSource = dt;
-            ListView1.DataBind();
-            //Connection.dbCommand("Select Name, image, Description from inventory where Category='Finished Products'");
-        }
-
-        protected void Button5_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("FLC_login.aspx");
+            Repeater1.DataSource = dt;
+            Repeater1.DataBind();
         }
     }
 }
-

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using MySql.Data.MySqlClient;
 
 namespace FLCwebApp
 {
@@ -21,10 +21,17 @@ namespace FLCwebApp
             //DataTable dt = Connection.dbTable("SELECT * FROM flc.users;");
             //dt.Rows[2][1].ToString();
             //Connection.dbCommand("UPDATE `flc`.`users` SET `Username` = 'test' WHERE (`ID` = '00010');");
+          
             if (Connection.verifyLogin(usertxt.Text,passtxt.Text))
+            {
+               
                 Response.Redirect("home.aspx");
+            }
+
+           
             else
                System.Windows.Forms.MessageBox.Show("Incorrect Username or Password, Please check.");
         }
+
     }
 }
