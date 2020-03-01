@@ -24,17 +24,18 @@ namespace FLCwebApp
         }
         private void BindListview()
         {
-            MySqlConnection con = new MySqlConnection("datasource=localhost;port=3306;username=root;password=ctamalla;database=flc");
-            MySqlCommand com = new MySqlCommand();
+            //MySqlConnection con = new MySqlConnection("datasource=localhost;port=3306;username=root;password=ctamalla;database=flc");
+            //MySqlCommand com = new MySqlCommand();
 
-            con.Open();
-            com = new MySqlCommand("Select Name, image, Description from inventory where Category='Finished Product'", con);
-            com.ExecuteNonQuery();
-            con.Close();
-            MySqlDataAdapter sa = new MySqlDataAdapter(com);
-            DataTable dt = new DataTable();
-            sa.Fill(dt);
-            ListView1.DataSource = dt;
+            //con.Open();
+            //com = new MySqlCommand("Select Name, image, Description from inventory where Category='Finished Product'", con);
+            //com.ExecuteNonQuery();
+            //con.Close();
+            //MySqlDataAdapter sa = new MySqlDataAdapter(com);
+            //DataTable dt = new DataTable();
+            //sa.Fill(dt);
+            //ListView1.DataSource = dt;
+            ListView1.DataSource = Connection.dbTable("Select Name, image, Description from inventory where Category='Finished Product'");
             ListView1.DataBind();
             //Connection.dbCommand("Select Name, image, Description from inventory where Category='Finished Products'");
         }
