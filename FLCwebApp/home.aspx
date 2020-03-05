@@ -32,7 +32,7 @@
         .sidetbl {
             width: 280px;
         }
-        #Button1, #Button2, #Button3, #Button5 {
+        #Button1, #Button2, #Button3, #Button5, #Button7 {
             width: 265px;
             height: 60px;
             padding: 5px;
@@ -56,7 +56,7 @@
            text-align: justify;
            padding: 40px;
         }
-        .des {
+        #des {
             width: 250px;
         }
         #Button4 {
@@ -71,12 +71,27 @@
             top: 0; /* Stay at the top */
             left: 0;
         }
+        
+        #Button5 {
+            bottom: 90px;
+            position: absolute;
+            width: 262px;
+            height: 57px;
+        }
         h6 {
             float: right;
             margin-right: 30px;
             color: antiquewhite;
             margin-top: 13px;
         }
+        #prodName {
+            font-size: 40px;
+            font-weight: bold;
+        }
+        .hidden {
+            display: none;
+        }
+        
     </style>
 </head>
 <body>
@@ -91,42 +106,69 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Button ID="Button1" class="btn btn-primary" runat="server" Text="Button" />
+                        <asp:Button ID="Button1" class="btn btn-outline-primary" runat="server" Text="Products Category" />
                     </td>
                 </tr>
                  <tr>
                     <td>
-                        <asp:Button ID="Button2" class="btn btn-primary" runat="server" Text="Button" />
+                        <asp:Button ID="Button2" class="btn btn-outline-primary" runat="server" Text="Order Status" />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <asp:Button ID="Button3" class="btn btn-primary" runat="server" Text="Button" />
+                        <asp:Button ID="Button3" class="btn btn-outline-primary" runat="server" Text="History" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <asp:Button ID="Button7" class="btn btn-outline-primary" runat="server" Text="User Account" />
                     </td>
                 </tr>
                  <tr>
                     <td>
-                        <asp:Button ID="Button5" class="btn btn-warning" runat="server" Text="Logout" OnClick="Button5_Click" />
+                        <asp:Button ID="Button5" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModalCenter" runat="server" Text="Logout" />
                     </td>
                 </tr>
             </table>
         </div>
+         <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                           <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Log Out</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    Are you sure you want to log-off?
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Back</button>
+                                    <a class="btn btn-danger" href="FLC_login.aspx" role="button">Log Out</a>
+                                   
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
         <div class="container">          
-            <asp:ListView ID="ListView1" runat="server">
+            <asp:ListView ID="ListView1" runat="server" >
                 <ItemTemplate>
                     <div class="list">
                     <table>
-                        <tr><td><img src="images\placeholder.png" class="image" /></td></tr>
-                        <tr><td><h5><%#Eval("Name") %></h5></td></tr>
-                        <tr><td class="des"><p><%#Eval("Description") %></p></td></tr>
                         <tr><td>
-                            <asp:Button ID="Button4" class="btn btn-primary btn-lg btn-block" runat="server" Text="Order Now" /></td></tr>   
+                         <asp:Image ID="prodImg" ImageUrl="images\placeholder.png" class="image" runat="server" /></td></tr>
+                         <tr><td><asp:Label ID="prodID" CssClass="hidden" runat="server" Text='<%#Eval("ID") %>'></asp:Label></td></tr> 
+                        <tr><td><b><asp:Label ID="prodName" runat="server" Text='<%#Eval("Name") %>'></asp:Label></b></td></tr>
+                        <tr><td><asp:Label ID="des" runat="server" Text='<%#Eval("Description") %>'></asp:Label></td></tr> 
+                        <tr><td><asp:Label ID="minOrd" CssClass="hidden" runat="server" Text='<%#Eval("Min_Order") %>'></asp:Label></td></tr>
                         <tr><td>
-                            <asp:Button ID="Button6" class="btn btn-primary btn-lg btn-block" runat="server" Text="Add to Cart" /></td></tr>    
+                            <asp:Button ID="details" class="btn btn-primary btn-lg btn-block" runat="server" Text="View Details" OnClick="viewDetails" /></td></tr>    
                     </table>
                     </div>
                 </ItemTemplate>
             </asp:ListView>
+            
         </div>
     </form>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

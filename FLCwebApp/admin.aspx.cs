@@ -18,5 +18,10 @@ namespace FLCwebApp
         {
             Response.Redirect("admin.aspx");
         }
+
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("FLC_login.aspx");
+        }
     }
 }
