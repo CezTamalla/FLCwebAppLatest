@@ -159,15 +159,14 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Button ID="Button4" type="button" CssClass="btn btn-outline-primary" runat="server" Text="User Accounts" />
+                        <asp:Button ID="Button4" type="button" CssClass="btn btn-outline-primary" runat="server" Text="User Accounts" OnClick="Button4_Click" />
                     </td>
                 </tr>
     
                  <tr>
                     <td>
                         <button type="button" id="btnLogout" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModalCenter"  >
-                              Log Out
-                            </button>
+                              Log Out</button>
                     </td>
                 </tr>
             </table>

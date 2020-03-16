@@ -5,8 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
-using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
+
 
 
 namespace FLCwebApp
@@ -14,6 +14,7 @@ namespace FLCwebApp
     public partial class home : System.Web.UI.Page
     {
         
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,26 +25,39 @@ namespace FLCwebApp
         }
         private void BindListview()
         {
-            //MySqlConnection con = new MySqlConnection("datasource=localhost;port=3306;username=root;password=ctamalla;database=flc");
-            //MySqlCommand com = new MySqlCommand();
+            MySqlConnection con = new MySqlConnection("datasource=localhost;port=3306;username=root;password=ctamalla;database=flc");
+            MySqlCommand com = new MySqlCommand();
 
-            //con.Open();
-            //com = new MySqlCommand("Select Name, image, Description from inventory where Category='Finished Product'", con);
-            //com.ExecuteNonQuery();
-            //con.Close();
-            //MySqlDataAdapter sa = new MySqlDataAdapter(com);
-            //DataTable dt = new DataTable();
-            //sa.Fill(dt);
-            //ListView1.DataSource = dt;
-            //ListView1.DataBind();
-            //Connection.dbCommand("Select Name, image, Description from inventory where Category='Finished Products'");
-            ListView1.DataSource = Connection.dbTable("Select Name, image, Description from inventory where Category = 'Finished Product'");
+            con.Open();
+            com = new MySqlCommand("Select Name, image, Description from inventory where Category='Finished Product'", con);
+            com.ExecuteNonQuery();
+            con.Close();
+            MySqlDataAdapter sa = new MySqlDataAdapter(com);
+            DataTable dt = new DataTable();
+            sa.Fill(dt);
+            ListView1.DataSource = dt;
             ListView1.DataBind();
+            //Connection.dbCommand("Select Name, image, Description from inventory where Category='Finished Products'");
         }
 
-        protected void Button5_Click(object sender, EventArgs e)
+       protected void viewDetails(object sender, EventArgs e)
         {
-            Response.Redirect("FLC_login.aspx");
+           ListViewDataItem lv = ((sender as Button).NamingContainer as ListViewDataItem);
+            if (lv != null)
+            {
+                //int id = (int)ListView1.DataKeys[lv.DataItemIndex]["ID"];
+              Image prodImg = (Image)lv.FindControl("prodImg");
+              Label prodName = (Label)lv.FindControl("prodName");
+              Label des = (Label)lv.FindControl("des");
+              Label minOrd = (Label)lv.FindControl("minOrd");
+              Session["prodName"] = prodName.Text;
+              Session["des"] = des.Text;
+              Session["minOrd"] = minOrd.Text;
+              Session["prodImg"] = prodImg.ImageUrl;
+
+                Response.Redirect("details.aspx");
+            }
+            
         }
     }
 }

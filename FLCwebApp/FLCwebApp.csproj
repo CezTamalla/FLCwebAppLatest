@@ -97,13 +97,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="admin.aspx" />
-    <Content Include="css\bootstrap-grid.css" />
-    <Content Include="css\bootstrap-grid.min.css" />
-    <Content Include="css\bootstrap-reboot.css" />
-    <Content Include="css\bootstrap-reboot.min.css" />
-    <Content Include="css\bootstrap.css" />
-    <Content Include="css\bootstrap.min.css" />
-    <Content Include="css\style.css" />
+    <Content Include="adminex.aspx" />
     <Content Include="FLC_login.aspx" />
     <Content Include="fonts\flaticon\backup.txt" />
     <Content Include="fonts\flaticon\font\flaticon.css" />
@@ -130,8 +124,6 @@
     <Content Include="images\tbcPine500ml.png" />
     <Content Include="images\tbcSampa250ml.png" />
     <Content Include="images\TBC_Lem250.png" />
-    <Content Include="productDetails.aspx" />
-    <Content Include="products.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +140,13 @@
     </Compile>
     <Compile Include="admin.aspx.designer.cs">
       <DependentUpon>admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminex.aspx.cs">
+      <DependentUpon>adminex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminex.aspx.designer.cs">
+      <DependentUpon>adminex.aspx</DependentUpon>
     </Compile>
     <Compile Include="Connection.cs" />
     <Compile Include="FLC_login.aspx.cs">
@@ -177,20 +176,6 @@
     </Compile>
     <Compile Include="images\insert.aspx.designer.cs">
       <DependentUpon>insert.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="productDetails.aspx.cs">
-      <DependentUpon>productDetails.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="productDetails.aspx.designer.cs">
-      <DependentUpon>productDetails.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="products.aspx.cs">
-      <DependentUpon>products.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="products.aspx.designer.cs">
-      <DependentUpon>products.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

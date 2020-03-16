@@ -24,8 +24,10 @@ namespace FLCwebApp
           
             if (Connection.verifyLogin(usertxt.Text,passtxt.Text))
             {
-               
-                Response.Redirect("home.aspx");
+                if (usertxt.Text == "Client" && passtxt.Text=="1111")
+                {
+                    Response.Redirect("home.aspx");
+                }
             }
 
            
