@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="details.aspx.cs" Inherits="FLCwebApp.details" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="detailsPage.aspx.cs" Inherits="FLCwebApp.detailsPage" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" /> 
-    <title></title>
+    <title>Details</title>
      <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
@@ -57,6 +57,15 @@
             width: 180px;
             
         }
+        .auto-style1 {
+            margin-left: 0;
+        }
+        .auto-style2 {
+            height: 20px;
+        }
+        .auto-style3 {
+            width: 149px;
+        }
     </style>
 </head>
 <body>
@@ -74,6 +83,8 @@
 	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact us</a></li>
 	        </ul>
     </div>
+            <asp:ImageButton ID="user" ImageUrl="images/user.png" runat="server" width="50px" height="50px" />
+            <asp:Label ID="clientlbl" runat="server" Text="Client"></asp:Label>
 	  </nav>
             <table>
                 <tr>
@@ -83,30 +94,44 @@
                 </tr>
                  <tr>
                     <td colspan="2">
-                        <h5><asp:Label ID="Label1" runat="server" Text="Label"></asp:Label> </h5>
+                        <h5><asp:Label ID="prodNamelbl" runat="server" Text=""></asp:Label> </h5>
                     </td>
                 </tr>
                  <tr>
                     <td colspan="2">
-                        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label> 
+                        <asp:Label ID="desclbl" runat="server" Text="Label"></asp:Label> 
                     </td>
                 </tr>
                  <tr>
-                    <td colspan="2">
-                        <asp:Label ID="Label3" CssClass="note" runat="server" Text="Label"></asp:Label> 
+                    <td colspan="2" class="auto-style2">
+                        <asp:Label ID="minOrdlbl" CssClass="note" runat="server" Text="Label"></asp:Label> 
                     </td>
                 </tr>
                  <tr>
-                    <td>
+                    <td class="auto-style3">
+                        <asp:Label ID="Label4" runat="server" Text="Quantity"></asp:Label>
+                        :</td>
+                     <td>
+                         <asp:DropDownList ID="DropDownList1" runat="server" CssClass="auto-style1" Height="36px" Width="193px">
+                             <asp:ListItem Text="2000"></asp:ListItem>
+                             <asp:ListItem Text="3000"></asp:ListItem>
+                             <asp:ListItem Text="4000"></asp:ListItem>
+                             <asp:ListItem Text="5000"></asp:ListItem>
+                             <asp:ListItem Text="10000"></asp:ListItem>
+                         </asp:DropDownList>
+                    </td>
+                </tr>
+                 <tr>
+                    <td class="auto-style3">
                         <asp:Button ID="add" class="btn btn-outline-primary" runat="server" Text="Add to Cart" />
                     </td>
                      <td>
-                        <asp:Button ID="order" class="btn btn-primary" runat="server" Text="Order Now" />
+                        <asp:Button ID="order" class="btn btn-primary" runat="server" Text="Order Now" OnClick="order_Click" Width="190px" />
                     </td>
                 </tr>
-            </table>
-         
-        </div>
+            </table> 
     </form>
+
+  
 </body>
 </html>

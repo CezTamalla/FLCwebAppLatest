@@ -26,6 +26,7 @@ namespace FLCwebApp
             {
                 if (usertxt.Text == "Client" && passtxt.Text=="1111")
                 {
+                    Session["userName"] = usertxt.Text;
                     Response.Redirect("home.aspx");
                 }
             }
