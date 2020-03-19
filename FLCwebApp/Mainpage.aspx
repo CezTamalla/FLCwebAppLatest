@@ -74,6 +74,7 @@
                 $("#myCarousel").carousel();
             });
 </script>
+
             <!--footer-->
 <footer class="ftco-footer ftco-section">
    <div class="container">
@@ -97,7 +98,7 @@
             	<div class="d-flex">
 	              <ul>
 	                <li><span class="text">21 Zabarte Ext, Novaliches, Quezon City, 1124 Metro Manila</span></li>
-	                <li><a href="#"><span class="text">+2 392 3929 210</span></a></li>
+	                <li><span class="text">+2 392 3929 210</span></li>
 	                <li><a href="#"><span class="text">fervarledesma@gmail.com</span></a></li>
 	              </ul>
 	            </div>

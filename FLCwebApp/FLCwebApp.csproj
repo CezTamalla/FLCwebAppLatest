@@ -97,7 +97,6 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="admin.aspx" />
-    <Content Include="adminex.aspx" />
     <Content Include="FLC_login.aspx" />
     <Content Include="fonts\flaticon\backup.txt" />
     <Content Include="fonts\flaticon\font\flaticon.css" />
@@ -140,13 +139,6 @@
     </Compile>
     <Compile Include="admin.aspx.designer.cs">
       <DependentUpon>admin.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="adminex.aspx.cs">
-      <DependentUpon>adminex.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="adminex.aspx.designer.cs">
-      <DependentUpon>adminex.aspx</DependentUpon>
     </Compile>
     <Compile Include="Connection.cs" />
     <Compile Include="FLC_login.aspx.cs">
