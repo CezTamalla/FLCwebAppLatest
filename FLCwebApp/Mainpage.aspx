@@ -17,7 +17,7 @@
 <body> 
 	    <form id="form1" runat="server">
 		<nav class="navbar navbar-expand-sm navbar-custom fixed-top">
-	      <a class="navbar-brand"><img src="images/logo.png" alt="Logo" style="width:80px;"/>&nbsp; &nbsp Fervar Ledesma Corporation</a>
+	      <a class="navbar-brand"><img src="images/logo.png" alt="Logo" style="width:80px;"/>&nbsp; &nbsp<font color="white"> Fervar Ledesma Corporation</font></a>
 	   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCustom">
         <i class="fa fa-bars fa-lg py-1 text-white"></i>
     </button>
@@ -25,7 +25,7 @@
             <ul class="navbar-nav ml-auto" >
 	          <li class="nav-item"><a href="Mainpage.aspx" class="nav-link">Home</a></li>
 	          <li class="nav-item"><a href="about.aspx" class="nav-link">About us</a></li>
-	          <li class="nav-item"><a href="product.aspx" class="nav-link">Products</a></li>
+	          <li class="nav-item"><a href="home.aspx" class="nav-link">Products</a></li>
 	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact us</a></li>
 	        </ul>
     </div>
