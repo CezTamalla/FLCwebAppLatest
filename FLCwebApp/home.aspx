@@ -132,15 +132,18 @@
 
             </ul>
     </div>
-            <div class="dropdown">
+            <div class="dropleft">
                 <asp:ImageButton ID="user" CssClass="dropdown-toggle" type="button" ImageUrl="images/user.png" runat="server" width="50px" height="50px" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
                 <div class="dropdown-menu" aria-labelledby="user">
-                    <a class="dropdown-item" href="FLC_login.aspx">Login or Register</a>
-                    <a class="dropdown-item" href="lougout.aspx">Logout</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <asp:Label ID="clientlbl" class="dropdown-item" runat="server" Text=""></asp:Label>  
+                    <asp:HyperLink ID="HyperLinklogin" class="dropdown-item" runat="server" NavigateUrl="FLC_login.aspx">Login or Register</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLinkorderStatus" class="dropdown-item" runat="server" NavigateUrl="orderStatus.aspx">Order Status</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLinkcart" class="dropdown-item" runat="server" NavigateUrl="cart.aspx">Cart</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLink1" class="dropdown-item" runat="server" NavigateUrl="orderHistory.aspx">History</asp:HyperLink>
+                    <asp:LinkButton ID="logoutbtn" class="dropdown-item" runat="server" OnClick="LinkButton_Click">Logout</asp:LinkButton>
+
                 </div>
             </div>
-            <asp:Label ID="clientlbl" runat="server" Text=""></asp:Label>   
 
 	  </nav>
                

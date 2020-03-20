@@ -97,6 +97,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="admin.aspx" />
+    <Content Include="cart.aspx" />
     <Content Include="css\style.css" />
     <Content Include="detailsPage.aspx" />
     <Content Include="FLC_login.aspx" />
@@ -128,6 +129,8 @@
     <Content Include="images\tbcPine500ml.png" />
     <Content Include="images\tbcSampa250ml.png" />
     <Content Include="images\TBC_Lem250.png" />
+    <Content Include="orderHistory.aspx" />
+    <Content Include="orderStatus.aspx" />
     <Content Include="register.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -145,6 +148,13 @@
     </Compile>
     <Compile Include="admin.aspx.designer.cs">
       <DependentUpon>admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="cart.aspx.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cart.aspx.designer.cs">
+      <DependentUpon>cart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Connection.cs" />
     <Compile Include="detailsPage.aspx.cs">
@@ -191,6 +201,20 @@
     </Compile>
     <Compile Include="images\insert.aspx.designer.cs">
       <DependentUpon>insert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="orderHistory.aspx.cs">
+      <DependentUpon>orderHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="orderHistory.aspx.designer.cs">
+      <DependentUpon>orderHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="orderStatus.aspx.cs">
+      <DependentUpon>orderStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="orderStatus.aspx.designer.cs">
+      <DependentUpon>orderStatus.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="register.aspx.cs">

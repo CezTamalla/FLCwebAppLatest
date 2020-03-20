@@ -6,8 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using MySql.Data.MySqlClient;
-
-
+using System.Web.Security;
 
 namespace FLCwebApp
 {
@@ -21,10 +20,12 @@ namespace FLCwebApp
                 if (Session["userName"] != null)
                 {
                     clientlbl.Text = Session["userName"].ToString();
-                }
-                this.BindListview();
-            }
 
+                }
+
+                this.BindListview();
+
+            }
         }
         private void BindListview()
         {
@@ -59,8 +60,20 @@ namespace FLCwebApp
             
         }
 
-       
+       public void LinkButton_Click(Object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Request.Cookies.Clear();
+            FormsAuthentication.SignOut();
 
+            object refUrl = Session["page"];
+            if (refUrl != null)
+            {
+                Session.Remove("userName");
+
+                Response.Redirect((string)refUrl);
+            }
+        }
     }
 }
 
