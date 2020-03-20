@@ -97,6 +97,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="admin.aspx" />
+    <Content Include="cart.aspx" />
     <Content Include="detailsPage.aspx" />
     <Content Include="FLC_login.aspx" />
     <Content Include="fonts\flaticon\backup.txt" />

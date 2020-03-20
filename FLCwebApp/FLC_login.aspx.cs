@@ -21,7 +21,9 @@ namespace FLCwebApp
                 string here = Request.Url.AbsoluteUri.ToString();
 
                 if (from != here)
+                {
                     Session["page"] = Request.UrlReferrer.ToString();
+                }
             }
         }
     

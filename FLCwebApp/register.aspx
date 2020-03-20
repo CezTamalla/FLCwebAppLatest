@@ -190,7 +190,7 @@
                 </tr>
                 <tr>
                     <td colspan="2" class="text-right">
-                        <asp:Button ID="registerbtn" class="btn btn-primary" runat="server" Text="Register"  />
+                        <asp:Button ID="registerbtn" class="btn btn-primary" runat="server" Text="Register and Login" OnClick="registerbtn_Click"  />
                     </td>
                 </tr>
                 

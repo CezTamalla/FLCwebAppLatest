@@ -13,7 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>  
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/styles.css"/>
      <script src="js/jquery.min.js"></script>
     <style>
         .top {
@@ -79,12 +79,23 @@
             <ul class="navbar-nav ml-auto" >
 	          <li class="nav-item"><a href="Mainpage.aspx" class="nav-link">Home</a></li>
 	          <li class="nav-item"><a href="about.aspx" class="nav-link">About us</a></li>
-	          <li class="nav-item"><a href="home.aspx" class="nav-link">Products</a></li>
+	          <li class="nav-item active"><a href="home.aspx" class="nav-link">Products</a></li>
 	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact us</a></li>
 	        </ul>
     </div>
-            <asp:ImageButton ID="user" ImageUrl="images/user.png" runat="server" width="50px" height="50px" />
-            <asp:Label ID="clientlbl" runat="server" Text=""></asp:Label>
+            <div class="dropleft">
+                <asp:ImageButton ID="user" CssClass="dropdown-toggle" type="button" ImageUrl="images/user.png" runat="server" width="50px" height="50px" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
+                <div class="dropdown-menu" aria-labelledby="user">
+                    <asp:Label ID="clientlbl" class="dropdown-item" runat="server" Text=""></asp:Label>  
+                    <asp:HyperLink ID="HyperLinklogin" class="dropdown-item" runat="server" NavigateUrl="FLC_login.aspx" Visible="false">Login or Register</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLinkorderStatus" class="dropdown-item" runat="server" NavigateUrl="orderStatus.aspx" Visible="false">Order Status</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLinkcart" class="dropdown-item" runat="server" NavigateUrl="cart.aspx" Visible="false">Cart</asp:HyperLink>
+                    <asp:HyperLink ID="HyperLinkorderHistory" class="dropdown-item" runat="server" NavigateUrl="orderHistory.aspx" Visible="false">History</asp:HyperLink>
+                    <asp:LinkButton ID="logoutbtn" class="dropdown-item" runat="server" OnClick="LinkButton_Click" Visible="false">Logout</asp:LinkButton>
+
+                </div>
+            </div>
+
 	  </nav>
             <table>
                 <tr>
@@ -113,6 +124,7 @@
                         :</td>
                      <td>
                          <asp:DropDownList ID="DropDownList1" runat="server" CssClass="auto-style1" Height="36px" Width="193px">
+                             <asp:ListItem Text="Select Quantity"></asp:ListItem>
                              <asp:ListItem Text="2000"></asp:ListItem>
                              <asp:ListItem Text="3000"></asp:ListItem>
                              <asp:ListItem Text="4000"></asp:ListItem>
@@ -123,7 +135,7 @@
                 </tr>
                  <tr>
                     <td class="auto-style3">
-                        <asp:Button ID="add" class="btn btn-outline-primary" runat="server" Text="Add to Cart" />
+                        <asp:Button ID="add" class="btn btn-outline-primary" runat="server" Text="Add to Cart" OnClick="add_Click" />
                     </td>
                      <td>
                         <asp:Button ID="order" class="btn btn-primary" runat="server" Text="Order Now" OnClick="order_Click" Width="190px" />

@@ -19,8 +19,15 @@ namespace FLCwebApp
             {
                 if (Session["userName"] != null)
                 {
-                    clientlbl.Text = Session["userName"].ToString();
-
+                    clientlbl.Text ="Signed in as " + Session["userName"].ToString();
+                    HyperLinkorderStatus.Visible = true;
+                    HyperLinkcart.Visible = true;
+                    HyperLinkorderHistory.Visible = true;
+                    logoutbtn.Visible = true;
+                }
+                else
+                {
+                    HyperLinklogin.Visible = true;
                 }
 
                 this.BindListview();
@@ -29,14 +36,14 @@ namespace FLCwebApp
         }
         private void BindListview()
         {
-            ListView1.DataSource = Connection.dbTable("Select ID, Name, image, Description, Min_Order from inventory where Category='Finished Product'");
+            ListView1.DataSource = Connection.dbTable("SELECT ID, Name, image, Description, Min_Order FROM inventory WHERE Category='Finished Product'");
             ListView1.DataBind();
 
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ListView1.DataSource = Connection.dbTable("Select ID, Name, image, Description, Min_Order from inventory where Name LIKE '%" + DropDownList1.SelectedItem.Text + "%'");
+            ListView1.DataSource = Connection.dbTable("SELECT ID, Name, image, Description, Min_Order FROM inventory WHERE Name LIKE '%" + DropDownList1.SelectedItem.Text + "%'");
             ListView1.DataBind();
         }
 
