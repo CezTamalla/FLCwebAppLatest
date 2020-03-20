@@ -132,9 +132,18 @@
 
             </ul>
     </div>
-            <asp:ImageButton ID="user" ImageUrl="images/user.png" runat="server" width="50px" height="50px" />
-            <asp:Label ID="Label2" runat="server" Text="Client"></asp:Label>            
+            <div class="dropdown">
+                <asp:ImageButton ID="user" CssClass="dropdown-toggle" type="button" ImageUrl="images/user.png" runat="server" width="50px" height="50px" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
+                <div class="dropdown-menu" aria-labelledby="user">
+                    <a class="dropdown-item" href="FLC_login.aspx">Login or Register</a>
+                    <a class="dropdown-item" href="lougout.aspx">Logout</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div>
+            <asp:Label ID="clientlbl" runat="server" Text=""></asp:Label>   
+
 	  </nav>
+               
         <div class="container">          
             <asp:ListView ID="ListView1" runat="server" >
                 <ItemTemplate>
@@ -166,8 +175,6 @@
                    </asp:DropDownList>
                </div>
     </form>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+       
 </body>
 </html>

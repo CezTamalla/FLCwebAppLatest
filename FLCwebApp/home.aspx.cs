@@ -18,6 +18,10 @@ namespace FLCwebApp
         {
             if (!this.IsPostBack)
             {
+                if (Session["userName"] != null)
+                {
+                    clientlbl.Text = Session["userName"].ToString();
+                }
                 this.BindListview();
             }
 
