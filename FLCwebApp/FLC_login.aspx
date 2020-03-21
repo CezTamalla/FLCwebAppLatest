@@ -9,7 +9,7 @@
     <title>FLC Login</title>
     <style>
         body {
-            background-color: #00171F;
+            
         }
         .logo {
             width: 160px;
@@ -46,18 +46,23 @@
         <div>
             <table class="login">
                 <tr>
-                    <td>
-                        <asp:TextBox ID="usertxt" runat="server" placeholder="Enter Username"></asp:TextBox>
+                    <td class="md-form">
+                        <asp:TextBox ID="usertxt" class="form-control" runat="server" placeholder="Enter Username"></asp:TextBox>
                     </td>
                 </tr>
                  <tr>
-                    <td>
-                        <asp:TextBox ID="passtxt" runat="server" placeholder="Enter Password" TextMode="Password"></asp:TextBox>
+                    <td class="md-form">
+                        <asp:TextBox ID="passtxt" class="form-control" runat="server" placeholder="Enter Password" TextMode="Password"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <asp:Button ID="loginbtn" class="btn btn-primary" runat="server" Text="Login" OnClick="loginbtn_Click" />
+                    </td>
+                </tr>
+                 <tr>
+                    <td>
+                        <p>No account yet? Register <a href="register.aspx">here.</a></p>
                     </td>
                 </tr>
             </table>

@@ -14,6 +14,15 @@ namespace FLCwebApp
         protected void Page_Load(object sender, EventArgs e)
         {
             usertxt.Focus();
+
+            if (!IsPostBack)
+            {
+                string from = Request.UrlReferrer.ToString();
+                string here = Request.Url.AbsoluteUri.ToString();
+
+                if (from != here)
+                    Session["page"] = Request.UrlReferrer.ToString();
+            }
         }
     
         protected void loginbtn_Click(object sender, EventArgs e)
@@ -21,19 +30,24 @@ namespace FLCwebApp
             //DataTable dt = Connection.dbTable("SELECT * FROM flc.users;");
             //dt.Rows[2][1].ToString();
             //Connection.dbCommand("UPDATE `flc`.`users` SET `Username` = 'test' WHERE (`ID` = '00010');");
-          
-            if (Connection.verifyLogin(usertxt.Text,passtxt.Text))
+
+            if (Connection.verifyLogin(usertxt.Text, passtxt.Text))
             {
-                if (usertxt.Text == "Client" && passtxt.Text=="1111")
+              
+                object refUrl = Session["page"];
+                if (refUrl != null)
                 {
                     Session["userName"] = usertxt.Text;
-                    Response.Redirect("home.aspx");
+
+                    Response.Redirect((string)refUrl);
                 }
             }
 
-           
+
             else
-               System.Windows.Forms.MessageBox.Show("Incorrect Username or Password, Please check.");
+            {
+                System.Windows.Forms.MessageBox.Show("Incorrect Username or Password, Please check.");
+            }
         }
 
     }

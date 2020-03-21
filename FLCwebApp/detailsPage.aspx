@@ -84,7 +84,7 @@
 	        </ul>
     </div>
             <asp:ImageButton ID="user" ImageUrl="images/user.png" runat="server" width="50px" height="50px" />
-            <asp:Label ID="clientlbl" runat="server" Text="Client"></asp:Label>
+            <asp:Label ID="clientlbl" runat="server" Text=""></asp:Label>
 	  </nav>
             <table>
                 <tr>
