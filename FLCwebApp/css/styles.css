@@ -1,6 +1,6 @@
 ﻿body {
 }
-
+/*logo*/
 .navbar-brand {
     color: #000000;
 }
@@ -32,7 +32,7 @@
 .navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus {
     color: rgba(0, 0, 0, 0.9);
 }
-
+/*navigation bar*/
 .navbar-custom {
     background-color: #3c50a2;
 }
@@ -76,11 +76,11 @@ ul li {
 h6, h2, p {
     color: #003459;
 }
-
+/*buttons*/
 .btn-primary {
     background-color: #00a8e8;
 }
-
+/*Client label*/
 .client {
     margin-left: 20px;
     font-size: 15px;
@@ -92,7 +92,7 @@ h6, h2, p {
     float: left;
     position: relative;
 }
-
+/*Underline*/
 .navbar-custom .navbar-nav .nav-item.active a::after {
     border-bottom: 3px solid #00a8e8;
     bottom: 6px;
@@ -101,13 +101,13 @@ h6, h2, p {
     position: absolute;
     right: 0;
 }
-
+/*icon*/
 .icon {
     margin-left: 50px;
     height: 35px;
     width: 35px;
 }
-
+/*footer*/
 .ftco-footer {
     margin-top: 100px;
 }
