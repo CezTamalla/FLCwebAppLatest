@@ -96,13 +96,7 @@ h6, h2, p {
 .btn-primary {
     background-color: #00a8e8;
 }
-/*Client label*/
-.client {
-    margin-left: 30px;
-    font-size: 15px;
-    margin-top: 0px;
-    color: #ffff;
-}
+
 
 .navbar-nav > li {
     float: left;
@@ -152,7 +146,7 @@ h6, h2, p {
                     <asp:LinkButton ID="logoutbtn" class="dropdown-item" runat="server" OnClick="LinkButton_Click" Visible="false">Logout</asp:LinkButton>
                 </div>
                      </div>
-         <asp:Label ID="Label1" runat="server" Text="Client" CssClass="client"></asp:Label>
+      
          </div>
 	  </nav>
         <section class="ftco-section ftco-no-pb ftco-no-pt bg-light" style="margin-top:90px;">

@@ -96,13 +96,7 @@ h6, h2, p {
 .btn-primary {
     background-color: #00a8e8;
 }
-/*Client label*/
-.client {
-    margin-left: 30px;
-    font-size: 15px;
-    margin-top: 0px;
-    color: #ffff;
-}
+
 
 .navbar-nav > li {
     float: left;
@@ -153,7 +147,7 @@ h6, h2, p {
                     <asp:LinkButton ID="logoutbtn" class="dropdown-item" runat="server" OnClick="LinkButton_Click" Visible="false">Logout</asp:LinkButton>
                 </div>
                      </div>
-         <asp:Label ID="Label2" runat="server" Text="Client" CssClass="client"></asp:Label>
+    
          </div>
 	  </nav>
 
@@ -169,14 +163,14 @@ h6, h2, p {
             <img src="images/slide2.png" alt="First Slide"/>
             <div class="carousel-caption d-none d-lg-block">
                 <h2>We made to order</h2>
-                <p><a href="#" class="btn btn-primary">Shop Now</a></p>
+                <p><a href="home.aspx" class="btn btn-primary">Shop Now</a></p>
             </div>
         </div>
         <div class="carousel-item">
             <img src="images/slide2_2.png" alt="Second Slide"/>
             <div class="carousel-caption d-none d-lg-block">
                 <h2> We do deliver</h2>
-            <p><a href="#" class="btn btn-primary">Shop Now</a></p>
+            <p><a href="home.aspx" class="btn btn-primary">Shop Now</a></p>
             </div>
         </div>
     </div>
