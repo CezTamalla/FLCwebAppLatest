@@ -169,14 +169,14 @@ h6, h2, p {
             <img src="images/slide2.png" alt="First Slide"/>
             <div class="carousel-caption d-none d-lg-block">
                 <h2>We made to order</h2>
-                <p><a href="#" class="btn btn-primary">Shop Now</a></p>
+                <p><a href="home.aspx" class="btn btn-primary">Shop Now</a></p>
             </div>
         </div>
         <div class="carousel-item">
             <img src="images/slide2_2.png" alt="Second Slide"/>
             <div class="carousel-caption d-none d-lg-block">
                 <h2> We do deliver</h2>
-            <p><a href="#" class="btn btn-primary">Shop Now</a></p>
+            <p><a href="home.aspx" class="btn btn-primary">Shop Now</a></p>
             </div>
         </div>
     </div>
