@@ -30,7 +30,7 @@ namespace FLCwebApp
                     HyperLinklogin.Visible = true;
                 }
 
-                this.BindListview();
+                //this.BindListview();
 
             }
         }

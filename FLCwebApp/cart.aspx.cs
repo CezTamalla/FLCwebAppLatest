@@ -16,7 +16,7 @@ namespace FLCwebApp
             {
                 if (Session["userName"] != null)
                 {
-                    clientlbl.Text = Session["userName"].ToString();
+                    clientlbl.Text = "Signed in as " + Session["userName"].ToString();
                     HyperLinkorderStatus.Visible = true;
                     HyperLinkcart.Visible = true;
                     HyperLinkorderHistory.Visible = true;
@@ -26,8 +26,8 @@ namespace FLCwebApp
                 {
                     HyperLinklogin.Visible = true;
                 }
-                Connection.dbCommand("SELECT users.Username, users.Password, client.ID, client.Name, inventory.Name, inventory.Description, inventory.image," +
-                "inventory.ID FROM users INNER JOIN client ON users.Name = client.Name INNER JOIN inventory WHERE inventory.Category = 'Finished Product'");
+
+                Connection.dbCommand("SELECT users.Username, users.Password, client.ID, client.Name, inventory.Name, inventory.Description, inventory.image, inventory.ID FROM users INNER JOIN client ON users.Name = client.Name INNER JOIN inventory WHERE inventory.Category = 'Finished Product'");
 
                 this.BindGridView();
             }
@@ -49,8 +49,16 @@ namespace FLCwebApp
 
        private void BindGridView()
         {
-            GridViewCart.DataSource = Connection.dbTable("SELECT * FROM cart");
-            GridViewCart.DataBind();
+           
+                GridViewCart.DataSource = Connection.dbTable("SELECT * FROM cart WHERE Client_Username='" + Session["userName"].ToString() + "'");
+                GridViewCart.DataBind();
+
+            int rowCount = GridViewCart.Rows.Count;
+            if (rowCount < 1)
+            {
+                nothingTodisplay.Text = "Cart is empty";
+            }
+           
         }
     }
 }

@@ -17,7 +17,7 @@ namespace FLCwebApp
             {
                 if (Session["userName"] != null)
                 {
-                    clientlbl.Text = Session["userName"].ToString();
+                    clientlbl.Text = "Signed in as " + Session["userName"].ToString();
                     HyperLinkorderStatus.Visible = true;
                     HyperLinkcart.Visible = true;
                     HyperLinkorderHistory.Visible = true;

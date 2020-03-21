@@ -167,7 +167,7 @@
         </div>
                <div class="search">
                    <asp:Label ID="Label1" runat="server" Text="Category"></asp:Label> 
-                   <asp:DropDownList ID="DropDownList1" runat="server" Width="240px" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                   <asp:DropDownList ID="DropDownList1" runat="server" Width="240px" AutoPostBack="true" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
                        <asp:ListItem Value="all" Text="All Products"></asp:ListItem>
                        <asp:ListItem Value="alcohol" Text="Alcohol"></asp:ListItem>
                        <asp:ListItem Value="alcologne" Text="Alcologne"></asp:ListItem>

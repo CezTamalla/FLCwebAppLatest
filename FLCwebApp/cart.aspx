@@ -25,6 +25,12 @@
         .hidden {
             display: none;
         }
+        #nothingTodisplay {
+            font-size: 30px;
+            color: darkblue;
+            font-weight: bolder;
+
+        }
     </style>
 </head>
 <body>
@@ -102,6 +108,9 @@
                 <SortedDescendingHeaderStyle BackColor="#242121" />
 
             </asp:GridView>
+        </div>
+        <asp:Label ID="nothingTodisplay" runat="server" Text=""></asp:Label>
+        <div class="noItem">
 
         </div>
     </form>
