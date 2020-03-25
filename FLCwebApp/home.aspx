@@ -11,6 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>  
+   
      <script src="js/jquery.min.js"></script>
     <title>Products</title>
     <style>
@@ -207,6 +208,12 @@ h6, h2, p {
     position: absolute;
     right: 0;
 }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .dropleft:hover .dropdown-menu {
+            display: block;
+        }
 
 /*footer*/
 .ftco-footer {
@@ -215,7 +222,9 @@ h6, h2, p {
 .dropleft{
     margin-left: 80px;
 }
-        
+     .drop-down {
+         font-style: normal;
+     }   
     </style>
 </head>
 <body>
@@ -229,13 +238,25 @@ h6, h2, p {
             <ul class="navbar-nav ml-auto" >
 	          <li class="nav-item"><a href="Mainpage.aspx" class="nav-link">Home</a></li>
 	          <li class="nav-item"><a href="about.aspx" class="nav-link">About us</a></li>
-	          <li class="nav-item active"><a href="home.aspx" class="nav-link">Products</a></li>
+	          <li class="nav-item dropdown">                 
+                  <a href="#" class="nav-link dropdown-toggle" type="button" id="dropdownMenuLink" data-toggle="dropdown"  data-hover="dropdown" aria-haspopup="true" aria-expanded="false">Products<span class="caret"></span></a>
+                  <div class="dropdown-menu" aria-labelledby="products">
+                      <asp:LinkButton ID="LinkButton1" class="dropdown-item" runat="server">Alcohol</asp:LinkButton>
+                      <asp:LinkButton ID="LinkButton2" class="dropdown-item" runat="server">Glass Cleaner</asp:LinkButton>
+                      <asp:LinkButton ID="LinkButton3" class="dropdown-item" runat="server">Laundry Bleach</asp:LinkButton>
+                      <asp:LinkButton ID="LinkButton4" class="dropdown-item" runat="server">Toilet Deodorizer</asp:LinkButton>
+                      <div class="dropdown-divider"></div>
+                      <asp:LinkButton ID="LinkButton5" class="dropdown-item" runat="server">Food</asp:LinkButton>
+
+                  </div>
+                
+	          </li>
 	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact us</a></li>
 
             </ul>
     </div>
             <div class="dropleft">
-                <asp:ImageButton ID="user" CssClass="dropdown-toggle" type="button" ImageUrl="images/user.png" runat="server" width="50px" height="50px" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
+                <asp:ImageButton ID="user" CssClass="dropdown-toggle" type="button" ImageUrl="images/user.png" runat="server" width="50px" height="50px" data-toggle="dropdown" data-hover="dropdown" aria-haspopup="true" aria-expanded="false" />
                 <div class="dropdown-menu" aria-labelledby="user">
                     <asp:Label ID="clientlbl" class="dropdown-item" runat="server" Text=""></asp:Label>  
                     <asp:HyperLink ID="HyperLinklogin" class="dropdown-item" runat="server" NavigateUrl="FLC_login.aspx" Visible="false">Login or Register</asp:HyperLink>
@@ -280,6 +301,7 @@ h6, h2, p {
                    </asp:DropDownList>
                </div>
     </form>
-       
+
+     <script src="js/bootstrap-dropdownhover.min.js"></script>   
 </body>
 </html>

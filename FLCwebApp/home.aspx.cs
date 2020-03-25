@@ -30,7 +30,7 @@ namespace FLCwebApp
                     HyperLinklogin.Visible = true;
                 }
 
-                //this.BindListview();
+                BindListview();
 
             }
         }
@@ -64,10 +64,9 @@ namespace FLCwebApp
 
                 Response.Redirect("detailsPage.aspx");
             }
-            
         }
 
-       public void LinkButton_Click(Object sender, EventArgs e)
+        public void LinkButton_Click(Object sender, EventArgs e)
         {
             Session.Abandon();
             Request.Cookies.Clear();
@@ -83,4 +82,3 @@ namespace FLCwebApp
         }
     }
 }
-
