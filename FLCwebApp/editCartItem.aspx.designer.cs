@@ -10,7 +10,7 @@
 namespace FLCwebApp {
     
     
-    public partial class cart {
+    public partial class editCartItem {
         
         /// <summary>
         /// form1 control.
@@ -85,57 +85,84 @@ namespace FLCwebApp {
         protected global::System.Web.UI.WebControls.LinkButton logoutbtn;
         
         /// <summary>
-        /// GridViewCart control.
+        /// Image1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridViewCart;
+        protected global::System.Web.UI.WebControls.Image Image1;
         
         /// <summary>
-        /// ButtonRemove control.
+        /// cartIDlbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonRemove;
+        protected global::System.Web.UI.WebControls.Label cartIDlbl;
         
         /// <summary>
-        /// ButtonEdit control.
+        /// prodNamelbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonEdit;
+        protected global::System.Web.UI.WebControls.Label prodNamelbl;
         
         /// <summary>
-        /// ButtonOrder control.
+        /// desclbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonOrder;
+        protected global::System.Web.UI.WebControls.Label desclbl;
         
         /// <summary>
-        /// nothingTodisplay control.
+        /// minOrdlbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label nothingTodisplay;
+        protected global::System.Web.UI.WebControls.Label minOrdlbl;
         
         /// <summary>
-        /// HyperLinkShopNow control.
+        /// Label4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLinkShopNow;
+        protected global::System.Web.UI.WebControls.Label Label4;
+        
+        /// <summary>
+        /// DropDownList1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        
+        /// <summary>
+        /// add control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button add;
+        
+        /// <summary>
+        /// order control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button order;
     }
 }

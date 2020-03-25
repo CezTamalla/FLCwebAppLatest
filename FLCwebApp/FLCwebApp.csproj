@@ -100,6 +100,7 @@
     <Content Include="cart.aspx" />
     <Content Include="css\styles.css" />
     <Content Include="detailsPage.aspx" />
+    <Content Include="editCartItem.aspx" />
     <Content Include="FLC_login.aspx" />
     <Content Include="fonts\flaticon\backup.txt" />
     <Content Include="fonts\flaticon\font\flaticon.css" />
@@ -164,6 +165,13 @@
     </Compile>
     <Compile Include="detailsPage.aspx.designer.cs">
       <DependentUpon>detailsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="editCartItem.aspx.cs">
+      <DependentUpon>editCartItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="editCartItem.aspx.designer.cs">
+      <DependentUpon>editCartItem.aspx</DependentUpon>
     </Compile>
     <Compile Include="FLC_login.aspx.cs">
       <DependentUpon>FLC_login.aspx</DependentUpon>

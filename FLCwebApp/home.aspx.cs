@@ -43,7 +43,7 @@ namespace FLCwebApp
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ListView1.DataSource = Connection.dbTable("SELECT ID, Name, image, Description, Min_Order FROM inventory WHERE Name LIKE '%" + DropDownList1.SelectedItem.Text + "%'");
+            ListView1.DataSource = Connection.dbTable("SELECT ID, Name, image, Description, Min_Order FROM inventory WHERE Name LIKE '%" + DropDownList1.SelectedItem.Text + "%' AND Category='Finished Product'");
             ListView1.DataBind();
         }
 

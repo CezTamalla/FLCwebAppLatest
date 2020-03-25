@@ -43,8 +43,9 @@ namespace FLCwebApp
             {
                 if (DropDownList1.SelectedIndex > 0)
                 {
+                    var status = "Pending";
                     var dateNow = DateTime.Now.ToString("yyyy-MM-dd");
-                    Connection.dbCommand("INSERT INTO clients_order (ordered_by, product_name, qty, date) values ('" + clientlbl.Text + "', '" + prodNamelbl.Text + desclbl.Text + "', '" + DropDownList1.SelectedItem.Text + "', '" + dateNow + "')");
+                    Connection.dbCommand("INSERT INTO clients_order (ordered_by, product_name, qty, date, status) values ('" + Session["userName"].ToString() + "', '" + prodNamelbl.Text + desclbl.Text + "', '" + DropDownList1.SelectedItem.Text + "', '" + dateNow + "', '" + status + "')");
                     MessageBox.Show("Order has been sent. Please expect delivery within 1 to 2 weeks.");
                     Response.Redirect("home.aspx");
                 }
@@ -80,7 +81,8 @@ namespace FLCwebApp
             {
                 if (DropDownList1.SelectedIndex > 0)
                 {
-                    Connection.dbCommand("INSERT INTO cart (Client_Username, prodName, Qty) values ('" + clientlbl.Text + "', '" + prodNamelbl.Text + desclbl.Text + "', '" + DropDownList1.SelectedItem.Text + "')");
+                    string status = "Active";
+                    Connection.dbCommand("INSERT INTO cart (Client_Username, prodName, Qty, Status) values ('" + Session["userName"].ToString() + "', '" + prodNamelbl.Text + desclbl.Text + "', '" + DropDownList1.SelectedItem.Text + "', '" + status + "')");
                     MessageBox.Show("Item is added to cart");
                     Response.Redirect("home.aspx");
                 }
