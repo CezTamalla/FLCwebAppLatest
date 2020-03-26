@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="home.aspx.cs" Inherits="FLCwebApp.home" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="products-alcohol.aspx.cs" Inherits="FLCwebApp.products_alcohol" %>
 
 <!DOCTYPE html>
 
@@ -288,9 +288,10 @@ h6, h2, p {
                     </div>
                 </ItemTemplate>
             </asp:ListView>        
-       
+       </div>
     </form>
 
      <script src="js/bootstrap-dropdownhover.min.js"></script>   
 </body>
 </html>
+

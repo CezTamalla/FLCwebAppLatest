@@ -133,6 +133,12 @@
     <Content Include="images\TBC_Lem250.png" />
     <Content Include="orderHistory.aspx" />
     <Content Include="orderStatus.aspx" />
+    <Content Include="products-alcohol.aspx" />
+    <Content Include="products-food.aspx" />
+    <Content Include="products-glassCleaner.aspx" />
+    <Content Include="products-laundryBleach.aspx" />
+    <Content Include="products-tbc.aspx" />
+    <Content Include="products-toiletDeo.aspx" />
     <Content Include="register.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -224,6 +230,48 @@
     </Compile>
     <Compile Include="orderStatus.aspx.designer.cs">
       <DependentUpon>orderStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products-alcohol.aspx.cs">
+      <DependentUpon>products-alcohol.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products-alcohol.aspx.designer.cs">
+      <DependentUpon>products-alcohol.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products-food.aspx.cs">
+      <DependentUpon>products-food.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products-food.aspx.designer.cs">
+      <DependentUpon>products-food.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products-glassCleaner.aspx.cs">
+      <DependentUpon>products-glassCleaner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products-glassCleaner.aspx.designer.cs">
+      <DependentUpon>products-glassCleaner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products-laundryBleach.aspx.cs">
+      <DependentUpon>products-laundryBleach.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products-laundryBleach.aspx.designer.cs">
+      <DependentUpon>products-laundryBleach.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products-tbc.aspx.cs">
+      <DependentUpon>products-tbc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products-tbc.aspx.designer.cs">
+      <DependentUpon>products-tbc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="products-toiletDeo.aspx.cs">
+      <DependentUpon>products-toiletDeo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="products-toiletDeo.aspx.designer.cs">
+      <DependentUpon>products-toiletDeo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="register.aspx.cs">
