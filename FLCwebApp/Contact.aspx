@@ -1,20 +1,25 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Mainpage.aspx.cs" Inherits="FLCwebApp.home_final" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="FLCwebApp.Contact" %>
 
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Home Page</title>
-     <meta charset="utf-8"/>
+    <title></title>
+<meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>  
+
+    <link rel="stylesheet" href="css/icomoon.css"/>
      <script src="js/jquery.min.js"></script>
    <link rel="stylesheet" href="css/icomoon.css"/>
+    
     <style type="text/css">
         body {
+            background-color:#dcdcdc;
 }
 /*logo*/
 .navbar-brand {
@@ -121,6 +126,93 @@ h6, h2, p {
     margin-left: 80px;
 
 }
+/*contact form*/
+
+.container{
+    margin-top:10%;
+    width: 1300px;
+}
+.contact-parent{
+    display:flex;
+    margin: 40px 0;
+ 
+}
+.contact-child{
+    display:flex;
+    flex:1;
+ 
+}
+.child1{
+    background-size:cover;
+    flex-direction:column;
+    justify-content: space-around;
+    color:#fff;
+    padding:100px 0;
+    margin-top:50px;
+    margin-left:80px;
+  
+
+}
+.child1 p{
+    padding-left:10%;
+   font-size:16px;
+    
+}
+.child1 p span{
+    font-size:13px;
+    color: #000;
+
+}
+.child2{
+    flex-direction:column;
+    justify-content:space-around;
+    background-color:#fff;
+    height:730px;
+    margin-left: 60px;
+   
+  
+
+}
+.inside-contact{
+    width:430px;
+    margin:0 auto;
+}
+h3{
+    margin-bottom: 40px;
+}
+.inside-contact h3{
+    text-transform: uppercase;
+    text-align:left;
+    margin-top:50px;
+}
+.inside-contact h4{
+    text-align:center;
+    font-size: 16px;
+    color:#00a5e2;
+}
+.inside-contact input, .inside-contact textarea{
+    width:100%;
+    background-color:#eee;
+    border:1px solid rgba(0,0,0,0.48);
+    padding:5px 5px;
+    margin-bottom:20px;
+}
+        .inside-contact input[type=submit] {
+          
+            background-color: #00a8e8;
+            color: #fff;
+            transition: 0.2s;
+            border: 1px solid #00a8e8;
+            margin: 30px 0;
+            margin-top: 10px;
+        }
+            .inside-contact input[type=submit]:hover {
+                background-color: #007ea7;
+                color: #000;
+                transition: 0.2s;
+            }
+
+
         </style>
 </head>
 <body> 
@@ -132,10 +224,10 @@ h6, h2, p {
     </button>
     <div class="navbar-collapse collapse" id="navbarCustom">
             <ul class="navbar-nav ml-auto" >
-	          <li class="nav-item active"><a href="Mainpage.aspx" class="nav-link">Home</a></li>
+	          <li class="nav-item "><a href="Mainpage.aspx" class="nav-link">Home</a></li>
 	          <li class="nav-item"><a href="About.aspx" class="nav-link">About us</a></li>
 	          <li class="nav-item"><a href="home.aspx" class="nav-link">Products</a></li>
-	          <li class="nav-item"><a href="Contact.aspx" class="nav-link">Contact us</a></li>    
+	          <li class="nav-item active"><a href="Contact.aspx" class="nav-link">Contact us</a></li>    
            </ul>         
    
                  <div class="dropleft">
@@ -152,80 +244,52 @@ h6, h2, p {
     
          </div>
 	  </nav>
+         
+        <div class="container">
+            <div class="contact-parent">
+               
+                <div class="contact-child child2">
+                    <div class="inside-contact">
+                        <h3>Contact Us</h3>
+                        <h4>
+                            <asp:Label ID="confirm" runat="server" Text=""></asp:Label>
+                        </h4>
 
-    <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
-        <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-         <div class="carousel-inner">
-        <div class="carousel-item active">
- 
-            <img src="images/slide2.png" alt="First Slide"/>
-            <div class="carousel-caption d-none d-lg-block">
-                <h2>We made to order</h2>
-                 
-                <p><a href="home.aspx" class="btn btn-primary">Shop Now</a></p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="images/slide2_2.png" alt="Second Slide"/>
-            <div class="carousel-caption d-none d-lg-block">
-                <h2> We do deliver</h2>
-            <p><a href="home.aspx" class="btn btn-primary">Shop Now</a></p>
-            </div>
-        </div>
-    </div>
-    <!-- Carousel controls -->
-    <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-    </a>
-    <a class="carousel-control-next" href="#myCarousel" data-slide="next">
-        <span class="carousel-control-next-icon"></span>
-    </a>
-</div>
-        <script>
-            $(document).ready(function () {
-                $("#myCarousel").carousel();
-            });
-</script>
+                        <p>Name</p>
+                        <asp:TextBox ID="txt_name" runat="server" Required="required" placeholder="Enter Your Name"></asp:TextBox>
+                        <p>Email</p>
+                        <asp:TextBox ID="txt_email" runat="server" Required="required" placeholder="Enter Your Email"></asp:TextBox>
+                        <p>Company Name</p>
+                        <asp:TextBox ID="txt_comname" runat="server" Required="required" placeholder="Enter Your Company Name"></asp:TextBox>                  
+                        <p>Subject</p>
+                        <asp:TextBox ID="txt_subject" runat="server" Required="required" ></asp:TextBox>
+                        <p>Message</p>
+                        <asp:TextBox ID="txt_msg" runat="server" Required="required" TextMode="MultiLine"></asp:TextBox>
 
-            <!--footer-->
-<footer class="ftco-footer ftco-section">
-   <div class="container">
-        <div class="row mb-6">
-          <div class="col-md-6">
-             <div class="ftco-footer-widget mb-4">
-               <div class="col-12 narrow text-center">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.535090550034!2d121.04578901484196!3d14.738856889714523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b045ae86b6bb%3A0xc802b9a4d16a8a81!2s21%20Zabarte%20Ext%2C%20Novaliches%2C%20Quezon%20City%2C%201124%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1585121569546!5m2!1sen!2sph" width="300" height="200" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                        <asp:Button ID="btn_send" runat="server" Text="SEND"  OnClick="btn_send_Click"/>
+                    </div>
+                   
+                </div>
+                 <div class="contact-child child1">
+                           <p>
+                        <i class="icon icon-phone"></i> &nbsp; &nbsp;235-4534 / 09100637530<br />
+                    </p>
+                       <p>
+                        <i class="icon icon-envelope"></i> &nbsp; &nbsp;FervarLedesma@Yahoo.com<br />
+                    </p>
+                      <p>
+                        <i class="icon icon-facebook"></i> &nbsp; &nbsp;Fervar Ledesma Corporation<br />
+                    </p>
+                    <p>
+                        <i class="icon icon-map-marker"></i> &nbsp; &nbsp;21 Zabarte Ext, Novaliches, Quezon City, 1124 Metro Manila   <br/>
+                    </p>
+                     <div class="col-12 narrow text-center">
+                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.535090550034!2d121.04578901484196!3d14.738856889714523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b045ae86b6bb%3A0xc802b9a4d16a8a81!2s21%20Zabarte%20Ext%2C%20Novaliches%2C%20Quezon%20City%2C%201124%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1585121569546!5m2!1sen!2sph" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+             
                 </div>
             </div>
-          </div>
-          <div class="col-md-6">
-            <div class="ftco-footer-widget mb-4">
-            	<h6 class="ftco-heading-4">Have a Questions?</h6>
-            	<div class="d-flex">
-	              <ul class="list-unstyled mr-l-5 pr-l-3 mr-4">
-                    <li> <i class="icon icon-phone"></i> &nbsp; &nbsp;235-4534 / 09100637530<br /><br /></li>
-	               <li> <i class="icon icon-envelope"></i> &nbsp; &nbsp;<a href="#">FervarLedesma@Yahoo.com</a><br /><br /></li>
-	                <li> <i class="icon icon-facebook"></i> &nbsp; &nbsp;<a href="#">Fervar Ledesma Corporation</a><br /><br /></li>
-                      <li> <i class="icon icon-map-marker"></i> &nbsp; &nbsp;21 Zabarte Ext, Novaliches, Quezon City, 1124 Metro Manila<br /><br/></li>
-	              </ul>
-	            </div>
-            </div>
-          </div>
         </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
-
-            <p> Copyright &copy;<script>document.write(new Date().getFullYear());</script> Fervar Ledesma Corporation</p>
-          </div>
-        </div>
-     </div>
-    </footer>
-
-
-        </form>
-</body>
-</html>
+            </form>
+    </body>
+    </html>

@@ -98,13 +98,13 @@
     <Content Include="About.aspx" />
     <Content Include="admin.aspx" />
     <Content Include="cart.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="css\icomoon.css" />
     <Content Include="css\styles.css" />
     <Content Include="detailsPage.aspx" />
     <Content Include="FLC_login.aspx" />
-    <Content Include="fonts\flaticon\backup.txt" />
     <Content Include="fonts\flaticon\font\flaticon.css" />
     <Content Include="fonts\flaticon\font\flaticon.html" />
-    <Content Include="fonts\flaticon\font\Flaticon.svg" />
     <Content Include="fonts\icomoon\icomoon.svg" />
     <Content Include="fonts\ionicons\css\ionicons.min.css" />
     <Content Include="fonts\ionicons\fonts\ionicons.svg" />
@@ -158,6 +158,13 @@
       <DependentUpon>cart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Connection.cs" />
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
     <Compile Include="detailsPage.aspx.cs">
       <DependentUpon>detailsPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -237,15 +244,10 @@
     <Content Include="js\bootstrap.bundle.min.js.map" />
     <Content Include="js\bootstrap.js.map" />
     <Content Include="js\bootstrap.min.js.map" />
-    <Content Include="fonts\.DS_Store" />
-    <Content Include="fonts\flaticon\.DS_Store" />
-    <Content Include="fonts\flaticon\font\.DS_Store" />
     <Content Include="fonts\flaticon\font\Flaticon.eot" />
-    <Content Include="fonts\flaticon\font\Flaticon.ttf" />
     <Content Include="fonts\flaticon\font\Flaticon.woff" />
     <Content Include="fonts\flaticon\font\Flaticon.woff2" />
     <Content Include="fonts\flaticon\font\_flaticon.scss" />
-    <Content Include="fonts\flaticon\license\license.pdf" />
     <Content Include="fonts\icomoon\icomoon.eot" />
     <Content Include="fonts\icomoon\icomoon.ttf" />
     <Content Include="fonts\icomoon\icomoon.woff" />

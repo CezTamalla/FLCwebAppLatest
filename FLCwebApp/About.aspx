@@ -13,6 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>  
      <script src="js/jquery.min.js"></script>
+      <link rel="stylesheet" href="css/icomoon.css"/>
 	<style type="text/css">
 	 body {
 }
@@ -117,6 +118,7 @@ h6, h2, p {
 }
 .dropleft{
     margin-left: 80px;
+
 }
 	</style>
 </head>
@@ -200,33 +202,26 @@ h6, h2, p {
 					</div>
 				
 		</section>
-		<footer class="ftco-footer ftco-section">
+<footer class="ftco-footer ftco-section">
    <div class="container">
         <div class="row mb-6">
           <div class="col-md-6">
              <div class="ftco-footer-widget mb-4">
-              <h6 class="ftco-heading-4">Help</h6>
-              <div class="d-flex">
-	              <ul class="list-unstyled mr-l-5 pr-l-3 mr-4">
-	                <li><a href="#" class="py-2 d-block">Shipping Information</a></li>
-	                <li><a href="#" class="py-2 d-block">Returns &amp; Exchange</a></li>
-	                <li><a href="#" class="py-2 d-block">Terms &amp; Conditions</a></li>
-	                <li><a href="#" class="py-2 d-block">Privacy Policy</a></li>
-	              </ul>
-	            </div>
+               <div class="col-12 narrow text-center">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.535090550034!2d121.04578901484196!3d14.738856889714523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b045ae86b6bb%3A0xc802b9a4d16a8a81!2s21%20Zabarte%20Ext%2C%20Novaliches%2C%20Quezon%20City%2C%201124%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1585121569546!5m2!1sen!2sph" width="300" height="200" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
             </div>
           </div>
           <div class="col-md-6">
             <div class="ftco-footer-widget mb-4">
             	<h6 class="ftco-heading-4">Have a Questions?</h6>
             	<div class="d-flex">
-	              <ul>
-	                <li><span class="text">21 Zabarte Ext, Novaliches, Quezon City, 1124 Metro Manila</span></li>
-	                <li><a href="#"><span class="text">+2 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="text">fervarledesma@gmail.com</span></a></li>
-           
-                      </ul>
-
+	              <ul class="list-unstyled mr-l-5 pr-l-3 mr-4">
+                    <li> <i class="icon icon-phone"></i> &nbsp; &nbsp;235-4534 / 09100637530<br /><br /></li>
+	               <li> <i class="icon icon-envelope"></i> &nbsp; &nbsp;<a href="#">FervarLedesma@Yahoo.com</a><br /><br /></li>
+	                <li> <i class="icon icon-facebook"></i> &nbsp; &nbsp;<a href="#">Fervar Ledesma Corporation</a><br /><br /></li>
+                      <li> <i class="icon icon-map-marker"></i> &nbsp; &nbsp;21 Zabarte Ext, Novaliches, Quezon City, 1124 Metro Manila <br /><br/></li>
+	              </ul>
 	            </div>
             </div>
           </div>
@@ -237,7 +232,7 @@ h6, h2, p {
             <p> Copyright &copy;<script>document.write(new Date().getFullYear());</script> Fervar Ledesma Corporation</p>
           </div>
         </div>
-      </div>
+     </div>
     </footer>
 
     </form>

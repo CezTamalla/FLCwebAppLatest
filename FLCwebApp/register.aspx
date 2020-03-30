@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="register.aspx.cs" Inherits="FLCwebApp.register" %>
+﻿ <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="register.aspx.cs" Inherits="FLCwebApp.register" %>
 
 <!DOCTYPE html>
 
