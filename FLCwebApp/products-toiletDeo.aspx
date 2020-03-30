@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="home.aspx.cs" Inherits="FLCwebApp.home" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="products-toiletDeo.aspx.cs" Inherits="FLCwebApp.products_toiletDeo" %>
 
 <!DOCTYPE html>
 
@@ -227,6 +227,7 @@ h6, h2, p {
      }   
     </style>
 </head>
+
 <body>
    	    <form id="form1" runat="server">
 		<nav class="navbar navbar-expand-sm navbar-custom fixed-top">
@@ -288,7 +289,7 @@ h6, h2, p {
                     </div>
                 </ItemTemplate>
             </asp:ListView>        
-       
+       </div>
     </form>
 
      <script src="js/bootstrap-dropdownhover.min.js"></script>   

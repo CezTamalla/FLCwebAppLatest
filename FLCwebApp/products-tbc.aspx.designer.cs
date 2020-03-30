@@ -10,7 +10,7 @@
 namespace FLCwebApp {
     
     
-    public partial class home {
+    public partial class products_tbc {
         
         /// <summary>
         /// form1 control.

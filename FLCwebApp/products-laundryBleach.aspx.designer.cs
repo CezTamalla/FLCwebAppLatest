@@ -10,7 +10,7 @@
 namespace FLCwebApp {
     
     
-    public partial class home {
+    public partial class products_laundryBleach {
         
         /// <summary>
         /// form1 control.

@@ -13,8 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>  
-    <link rel="stylesheet" href="css/styles.css"/>
-     <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.min.js"></script>
     <style>
         .top {
             height: 50px;
@@ -25,12 +24,12 @@
             top: 0; /* Stay at the top */
             left: 0;
         }
-        h6 {
+        /*h6 {
             float: right;
             margin-right: 30px;
             color: antiquewhite;
             margin-top: 20px;
-        }
+        }*/
         table {
             width: 400px;
             height: auto;
@@ -66,6 +65,109 @@
         .auto-style3 {
             width: 149px;
         }
+        .navbar-brand {
+    color: #000000;
+}
+
+.navbar-brand {
+    font-weight: 800;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.navbar-brand {
+    display: inline-block;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+}
+
+    .navbar-brand:hover, .navbar-brand:focus {
+        text-decoration: none;
+    }
+
+.navbar-brand {
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus {
+    color: rgba(0, 0, 0, 0.9);
+}
+/*navigation bar*/
+.navbar-custom {
+    background-color: #3c50a2;
+}
+
+ul li {
+    margin-left: 20px;
+    font-size: 15px;
+
+}
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: black;
+}
+
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: #ffffff;
+}
+
+/* change the color of active or hovered links */
+.navbar-custom .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: #00171f;
+}
+
+
+.navbar-custom .dropdown-menu {
+    background-color: #3c50a2;
+}
+
+.navbar-custom .dropdown-item {
+    color: #ffffff;
+}
+
+    .navbar-custom .dropdown-item:hover,
+    .navbar-custom .dropdown-item:focus {
+        color: #191919;
+        background-color: #191919);
+    }
+
+h6, h2, p {
+    color: #003459;
+}
+/*buttons*/
+.btn-primary {
+    background-color: #00a8e8;
+}
+
+
+.navbar-nav > li {
+    float: left;
+    position: relative;
+}
+/*Underline*/
+.navbar-custom .navbar-nav .nav-item.active a::after {
+    border-bottom: 3px solid #00a8e8;
+    bottom: 6px;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+}
+
+/*footer*/
+.ftco-footer {
+    margin-top: 100px;
+}
+.dropleft{
+    margin-left: 80px;
+}
     </style>
 </head>
 <body>
@@ -110,7 +212,7 @@
                 </tr>
                  <tr>
                     <td colspan="2">
-                        <asp:Label ID="desclbl" runat="server" Text="Label"></asp:Label> 
+                        <asp:Label ID="desclbl" runat="server" Text=""></asp:Label> 
                     </td>
                 </tr>
                  <tr>

@@ -94,6 +94,33 @@ namespace FLCwebApp {
         protected global::System.Web.UI.WebControls.GridView GridViewCart;
         
         /// <summary>
+        /// ButtonRemove control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonRemove;
+        
+        /// <summary>
+        /// ButtonEdit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonEdit;
+        
+        /// <summary>
+        /// ButtonOrder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonOrder;
+        
+        /// <summary>
         /// nothingTodisplay control.
         /// </summary>
         /// <remarks>
@@ -101,5 +128,14 @@ namespace FLCwebApp {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label nothingTodisplay;
+        
+        /// <summary>
+        /// HyperLinkShopNow control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HyperLinkShopNow;
     }
 }
