@@ -5,12 +5,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
-using MySql.Data.MySqlClient;
 using System.Web.Security;
 using System.Configuration;
 using System.Drawing;
 using System.Net;
 using System.Net.Mail;
+using System.Text;
+
+using MySql.Data.MySqlClient;
 
 namespace FLCwebApp
 {
@@ -57,42 +59,42 @@ namespace FLCwebApp
 
         protected void btn_send_Click(object sender, EventArgs e)
         {
-            try
+          try
             {
-                var from = "potestad29@gmail.com";
-                var to = "potestad29@gmail.com";
-                //const string Password = "g1ft3d262018";
+                var from = "fervarledesmawebsite@gmail.com";
+                var to = "fervarledesmawebsite@gmail.com";
+                const string Password = "fervar2020";
                 string mail_subject = txt_subject.Text.ToString();
-                string mail_message = "From: " + txt_name + "\n";
-                mail_message += "Email: " + txt_email + "\n";
+                string mail_message = "From: " + txt_name.Text + "\n";
+                mail_message += "Email: " + txt_email.Text + "\n";
                 mail_message += "Company Name: " + txt_comname.Text + "\n";
+                mail_message += "Subject: " + txt_subject.Text + "\n";
                 mail_message += "Message: " + txt_msg.Text + "\n";
+
                 var smtp = new SmtpClient();
                 {
-                smtp.Host = "smtp.gmail.com";
-                smtp.Port = 587;
-                smtp.EnableSsl = true;
-                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                smtp.Credentials = new NetworkCredential("potestad29@gmail.com", "g1ft3d262018");
-                smtp.Timeout = 20000;
+                    smtp.UseDefaultCredentials = false;
+                    smtp.Host = "smtp.gmail.com";
+                    smtp.Port = 587;
+                    smtp.EnableSsl = true;
+                    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    smtp.Credentials = new NetworkCredential(from, Password);
+                    smtp.Timeout = 90000;
                 }
-                MailMessage message = new MailMessage(from, to, mail_subject, mail_message);
-                message.IsBodyHtml = true;
-
-                confirm.Text = "Thank you for your email";
+                smtp.Send(from, to, mail_subject, mail_message);
+                confirm.Text = "Thank you for your email!";
 
                 txt_name.Text = " ";
                 txt_email.Text = " ";
                 txt_comname.Text = " ";
                 txt_subject.Text = " ";
                 txt_msg.Text = " ";
-               
-            }
-            catch (Exception)
-            {
+          }
+           catch (Exception)
+           {
                confirm.Text = "Something went wrong! Please try again";
                confirm.ForeColor = Color.Red;
-            }
+           }
         }
     }
 }

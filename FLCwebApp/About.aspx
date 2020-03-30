@@ -218,7 +218,7 @@ h6, h2, p {
             	<div class="d-flex">
 	              <ul class="list-unstyled mr-l-5 pr-l-3 mr-4">
                     <li> <i class="icon icon-phone"></i> &nbsp; &nbsp;235-4534 / 09100637530<br /><br /></li>
-	               <li> <i class="icon icon-envelope"></i> &nbsp; &nbsp;<a href="#">FervarLedesma@Yahoo.com</a><br /><br /></li>
+	               <li> <i class="icon icon-envelope"></i> &nbsp; &nbsp;<a href="#">fervarledesmawebsite@gmail.com</a><br /><br /></li>
 	                <li> <i class="icon icon-facebook"></i> &nbsp; &nbsp;<a href="#">Fervar Ledesma Corporation</a><br /><br /></li>
                       <li> <i class="icon icon-map-marker"></i> &nbsp; &nbsp;21 Zabarte Ext, Novaliches, Quezon City, 1124 Metro Manila <br /><br/></li>
 	              </ul>
