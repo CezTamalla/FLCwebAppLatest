@@ -52,7 +52,7 @@
             height: auto;
             float: right;
             position: absolute;
-            margin-left: 30px;
+            margin-left: 10px;
             margin-top: 100px;
         }
         .image {
@@ -62,7 +62,7 @@
         .list {
            display: inline-block;
            text-align: justify;
-           padding: 40px;
+           padding: 33px;
         }
         #des {
             width: 250px;
@@ -225,6 +225,70 @@ h6, h2, p {
      .drop-down {
          font-style: normal;
      }   
+     .notif {
+            width: 350px;
+            height: auto;
+            float: right;
+            margin-top: 150px;
+            margin-left: 970px;
+            position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+            z-index: 1; /* Stay on top */
+            top: 0; /* Stay at the top */
+            left: 0;
+            overflow-x: hidden; /* Disable horizontal scroll */
+            padding: 7px;
+        }
+        #GridViewMessage {
+            width: 100%;
+            height: auto;
+            border-style: hidden;
+        }
+        #Label1 {
+            font-weight: bolder;
+            color: darkslategrey;
+            padding-bottom: 10px;
+            font-size: 18px;
+        }
+        #Label4 {
+             font-weight: bolder;
+            color: darkslategrey;
+            padding-bottom: 10px;
+            font-style: italic;
+        }
+        .orders-list {
+            width: auto;
+            height: auto;
+            margin-top: 150px;
+            margin-left: 100px;
+
+        }
+        #GridViewOrderStatus {
+            width: 800px;
+            border-style: hidden;
+        }
+        .hidden {
+            display: none;
+        }
+        #nothingTodisplay {
+            font-size: 30px;
+            color: darkblue;
+            font-weight: bolder;
+
+        }
+        .noItem {
+            width: 200px;
+            height:auto;
+            margin-left: 37%;
+            margin-top: 50px;
+            text-align: center;
+            position: absolute;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .dropleft:hover .dropdown-menu {
+            display: block;
+        }
     </style>
 </head>
 
@@ -261,6 +325,7 @@ h6, h2, p {
                 <asp:ImageButton ID="user" CssClass="dropdown-toggle" type="button" ImageUrl="images/user.png" runat="server" width="50px" height="50px" data-toggle="dropdown" data-hover="dropdown" aria-haspopup="true" aria-expanded="false" />
                 <div class="dropdown-menu" aria-labelledby="user">
                     <asp:Label ID="clientlbl" class="dropdown-item" runat="server" Text=""></asp:Label>  
+                    <div class="dropdown-divider"></div>
                     <asp:HyperLink ID="HyperLinklogin" class="dropdown-item" runat="server" NavigateUrl="FLC_login.aspx" Visible="false">Login or Register</asp:HyperLink>
                     <asp:HyperLink ID="HyperLinkorderStatus" class="dropdown-item" runat="server" NavigateUrl="orderStatus.aspx" Visible="false">Order Status</asp:HyperLink>
                     <asp:HyperLink ID="HyperLinkcart" class="dropdown-item" runat="server" NavigateUrl="cart.aspx" Visible="false">Cart</asp:HyperLink>
@@ -290,6 +355,34 @@ h6, h2, p {
                 </ItemTemplate>
             </asp:ListView>        
        </div>
+               <div class="notif">
+                   <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                   <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                       <ContentTemplate>
+                           <asp:Panel ID="notifPanel" runat="server" Visible="false">
+                               <asp:Label ID="recipientlbl" CssClass="hidden" runat="server" Text="Label"></asp:Label>
+                               <asp:Label ID="Label1" runat="server" Text="Notifications"></asp:Label><br />
+                                <asp:Label ID="Label4" runat="server" Text="Latest:"></asp:Label><br />
+                                <asp:Label ID="datelbl" runat="server" BackColor="Yellow" ForeColor="#333333"></asp:Label><br />
+                               <asp:Label ID="msglbl" runat="server" BackColor="Yellow" ForeColor="#333333"></asp:Label><br /><br />
+
+                               <asp:GridView ID="GridViewMessage" runat="server" AllowPaging="True" AutoGenerateColumns="False" OnPageIndexChanging="GridViewMessage_PageIndexChanging" PageSize="3" >
+                                   <Columns>
+                                       <asp:TemplateField HeaderText="All Messages">
+                                           <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                           <ItemStyle HorizontalAlign="Left" Height="100px" />
+                                           <ItemTemplate>
+                                               <asp:Label ID="Label2" runat="server" Text='<%# Eval("Date_Sent") %>'></asp:Label><br />
+                                               <asp:Label ID="Label3" runat="server" Text='<%# Eval("Message") %>'></asp:Label>
+                                           </ItemTemplate>
+                                       </asp:TemplateField>
+                                   </Columns>
+                               </asp:GridView>
+                           </asp:Panel>
+                           <asp:Timer ID="Timer1" runat="server" Interval="2000" OnTick="Timer1_Tick"></asp:Timer>
+                       </ContentTemplate>
+                   </asp:UpdatePanel>
+               </div>
     </form>
 
      <script src="js/bootstrap-dropdownhover.min.js"></script>   

@@ -12,10 +12,14 @@ namespace FLCwebApp
 {
     public partial class cart : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.IsPostBack)
             {
+                BindGridView();
+                GridViewMessageBind();
+
                 if (Session["userName"] != null)
                 {
                     clientlbl.Text = "Signed in as " + Session["userName"].ToString();
@@ -23,15 +27,31 @@ namespace FLCwebApp
                     HyperLinkcart.Visible = true;
                     HyperLinkorderHistory.Visible = true;
                     logoutbtn.Visible = true;
+                    notifPanel.Visible = true;
                 }
                 else
                 {
                     HyperLinklogin.Visible = true;
                 }
 
-                //Connection.dbCommand("SELECT users.Username, users.Password, client.ID, client.Name, inventory.Name, inventory.Description, inventory.image, inventory.ID FROM users INNER JOIN client ON users.Name = client.Name INNER JOIN inventory WHERE inventory.Category = 'Finished Product'");
+            }
+        }
 
-                BindGridView();
+
+        private void GridViewMessageBind()
+        {
+            GridViewMessage.DataSource = Connection.dbTable("SELECT * FROM message ORDER BY ID DESC");
+            GridViewMessage.DataBind();
+        }
+
+        protected void Timer1_Tick(object sender, EventArgs e)
+        {
+            notifPanel.Visible = true;
+            DataTable dt = Connection.dbTable("SELECT * FROM message WHERE Recipient='" + Session["userName"].ToString() + "' ORDER BY ID DESC");
+            if (dt.Rows.Count > 0)
+            {
+                datelbl.Text = dt.Rows[0]["Date_Sent"].ToString();
+                msglbl.Text = dt.Rows[0]["Message"].ToString();
             }
         }
         public void LinkButton_Click(Object sender, EventArgs e)
@@ -153,6 +173,41 @@ namespace FLCwebApp
             }
 
             BindGridView();
+        }
+
+        public void LBproductsAll_Click(Object sender, EventArgs e)
+        {
+            Response.Redirect("home.aspx");
+        }
+
+        public void LBalcohol_Click(Object sender, EventArgs e)
+        {
+            Response.Redirect("products-alcohol.aspx");
+        }
+
+        public void LBglassCleaner_Click(Object sender, EventArgs e)
+        {
+            Response.Redirect("products-glassCleaner.aspx");
+        }
+
+        public void LBlaundryBleach_Click(Object sender, EventArgs e)
+        {
+            Response.Redirect("products-laundryBleach.aspx");
+        }
+
+        public void LBtbc_Click(Object sender, EventArgs e)
+        {
+            Response.Redirect("products-tbc.aspx");
+        }
+
+        public void LBtoiletDeo_Click(Object sender, EventArgs e)
+        {
+            Response.Redirect("products-toiletDeo.aspx");
+        }
+
+        public void LBfood_Click(Object sender, EventArgs e)
+        {
+            Response.Redirect("products-food.aspx");
         }
     }
 }

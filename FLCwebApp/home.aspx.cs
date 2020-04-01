@@ -1,46 +1,66 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.IO;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
 using MySql.Data.MySqlClient;
-using System.Web.Security;
 
 namespace FLCwebApp
 {
     public partial class home : System.Web.UI.Page
     {
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!this.IsPostBack)
             {
+                BindListview();
                 if (Session["userName"] != null)
                 {
-                    clientlbl.Text ="Signed in as " + Session["userName"].ToString();
+                    clientlbl.Text = "Signed in as " + Session["userName"].ToString();
+                    recipientlbl.Text = Session["userName"].ToString();
                     HyperLinkorderStatus.Visible = true;
                     HyperLinkcart.Visible = true;
                     HyperLinkorderHistory.Visible = true;
                     logoutbtn.Visible = true;
+                    notifPanel.Visible = true;
+                    GridViewMessageBind();
+                    DataBind();
+
                 }
                 else
                 {
                     HyperLinklogin.Visible = true;
                 }
 
-                BindListview();
-
             }
         }
 
-        protected static string ReturnEncodedBase64UTF8(object rawImg)
+        protected void GridViewMessage_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            string img = "data:BLOB/png;base64,{0}"; //change image type if need be
-            byte[] toEncodeAsBytes = (byte[])rawImg;
-            string returnValue = System.Convert.ToBase64String(toEncodeAsBytes);
-            return String.Format(img, returnValue);
+            GridViewMessage.PageIndex = e.NewPageIndex;
+            DataBind();
+        }
+
+        private void GridViewMessageBind()
+        {
+                GridViewMessage.DataSource = Connection.dbTable("SELECT Date_Sent, Message FROM message WHERE Recipient='" + recipientlbl.Text + "' ORDER BY ID DESC");
+                GridViewMessage.DataBind();
+        }
+    
+        protected void Timer1_Tick(object sender, EventArgs e)
+        {
+            notifPanel.Visible = true;
+            DataTable dt = Connection.dbTable("SELECT * FROM message WHERE Recipient='" + Session["userName"].ToString() + "' ORDER BY ID DESC");
+            if (dt.Rows.Count > 0)
+            {
+                datelbl.Text = dt.Rows[0]["Date_Sent"].ToString();
+                msglbl.Text = dt.Rows[0]["Message"].ToString();
+            }
         }
 
         private void BindListview()
@@ -116,6 +136,16 @@ namespace FLCwebApp
         public void LBfood_Click(Object sender, EventArgs e)
         {
             Response.Redirect("products-food.aspx");
+        }
+
+        protected void ListView1_ItemDataBound(object sender, ListViewItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListViewItemType.DataItem)
+            {
+                byte[] bytes = (byte[])(e.Item.DataItem as DataRowView)["image"];
+                string base64String = Convert.ToBase64String(bytes, 0, bytes.Length);
+                (e.Item.FindControl("prodImg") as Image).ImageUrl = "data:image/png;base64," + base64String;
+            }
         }
     }
 }

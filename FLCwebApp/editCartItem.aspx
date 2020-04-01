@@ -172,6 +172,73 @@ h6, h2, p {
 .hidden {
     display: none;
 }
+        .notif {
+            width: 350px;
+            height: auto;
+            float: right;
+            margin-top: 150px;
+            margin-left: 970px;
+            position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+            z-index: 1; /* Stay on top */
+            top: 0; /* Stay at the top */
+            left: 0;
+            overflow-x: hidden; /* Disable horizontal scroll */
+            padding: 7px;
+        }
+        #GridViewMessage {
+            width: 100%;
+            height: auto;
+            border-style: hidden;
+        }
+        #Label1 {
+            font-weight: bolder;
+            color: darkslategrey;
+            padding-bottom: 10px;
+            font-size: 18px;
+        }
+        #Label4 {
+             font-weight: bolder;
+            color: darkslategrey;
+            padding-bottom: 10px;
+            font-style: italic;
+        }
+        .orders-list {
+            width: auto;
+            height: auto;
+            margin-top: 150px;
+            margin-left: 100px;
+
+        }
+        #GridViewOrderStatus {
+            width: 800px;
+            border-style: hidden;
+        }
+        .hidden {
+            display: none;
+        }
+        #nothingTodisplay {
+            font-size: 30px;
+            color: darkblue;
+            font-weight: bolder;
+
+        }
+        .noItem {
+            width: 200px;
+            height:auto;
+            margin-left: 37%;
+            margin-top: 50px;
+            text-align: center;
+            position: absolute;
+        }
+        .hidden {
+            display: none;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .dropleft:hover .dropdown-menu {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -192,7 +259,8 @@ h6, h2, p {
             <div class="dropleft">
                 <asp:ImageButton ID="user" CssClass="dropdown-toggle" type="button" ImageUrl="images/user.png" runat="server" width="50px" height="50px" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" />
                 <div class="dropdown-menu" aria-labelledby="user">
-                    <asp:Label ID="clientlbl" class="dropdown-item" runat="server" Text=""></asp:Label>  
+                    <asp:Label ID="clientlbl" class="dropdown-item" runat="server" Text=""></asp:Label>
+                    <div class="dropdown-divider"></div>
                     <asp:HyperLink ID="HyperLinklogin" class="dropdown-item" runat="server" NavigateUrl="FLC_login.aspx" Visible="false">Login or Register</asp:HyperLink>
                     <asp:HyperLink ID="HyperLinkorderStatus" class="dropdown-item" runat="server" NavigateUrl="orderStatus.aspx" Visible="false">Order Status</asp:HyperLink>
                     <asp:HyperLink ID="HyperLinkcart" class="dropdown-item" runat="server" NavigateUrl="cart.aspx" Visible="false">Cart</asp:HyperLink>
@@ -249,9 +317,8 @@ h6, h2, p {
                     </td>
                 </tr>
             </table> 
-    </form>
 
-  
+    </form>  
 </body>
 </html>
 

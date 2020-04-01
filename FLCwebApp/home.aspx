@@ -52,7 +52,7 @@
             height: auto;
             float: right;
             position: absolute;
-            margin-left: 30px;
+            margin-left: 10px;
             margin-top: 100px;
         }
         .image {
@@ -62,7 +62,7 @@
         .list {
            display: inline-block;
            text-align: justify;
-           padding: 40px;
+           padding: 33px;
         }
         #des {
             width: 250px;
@@ -99,19 +99,36 @@
         .hidden {
             display: none;
         }
-        .search {
-            width: 200px;
+        .notif {
+            width: 350px;
             height: auto;
             float: right;
             margin-top: 150px;
-            margin-left: 1040px;
+            margin-left: 970px;
             position: fixed;
             padding: 7px;
+        }
+        #GridViewMessage {
+            width: 100%;
+            height: auto;
+            border-style: hidden;
         }
         #Label1 {
             font-weight: bolder;
             color: darkslategrey;
             padding-bottom: 10px;
+            font-size: 18px;
+        }
+        #Label4 {
+             font-weight: bolder;
+            color: darkslategrey;
+            padding-bottom: 10px;
+            font-style: italic;
+        }
+        #viewbtn, #hidebtn {
+            background-color: none;
+            width: 100%;
+            height: 20px;
         }
         .navbar-brand {
     color: #000000;
@@ -218,6 +235,7 @@ h6, h2, p {
 /*footer*/
 .ftco-footer {
     margin-top: 100px;
+
 }
 .dropleft{
     margin-left: 80px;
@@ -260,6 +278,7 @@ h6, h2, p {
                 <asp:ImageButton ID="user" CssClass="dropdown-toggle" type="button" ImageUrl="images/user.png" runat="server" width="50px" height="50px" data-toggle="dropdown" data-hover="dropdown" aria-haspopup="true" aria-expanded="false" />
                 <div class="dropdown-menu" aria-labelledby="user">
                     <asp:Label ID="clientlbl" class="dropdown-item" runat="server" Text=""></asp:Label>  
+                    <div class="dropdown-divider"></div>
                     <asp:HyperLink ID="HyperLinklogin" class="dropdown-item" runat="server" NavigateUrl="FLC_login.aspx" Visible="false">Login or Register</asp:HyperLink>
                     <asp:HyperLink ID="HyperLinkorderStatus" class="dropdown-item" runat="server" NavigateUrl="orderStatus.aspx" Visible="false">Order Status</asp:HyperLink>
                     <asp:HyperLink ID="HyperLinkcart" class="dropdown-item" runat="server" NavigateUrl="cart.aspx" Visible="false">Cart</asp:HyperLink>
@@ -272,12 +291,12 @@ h6, h2, p {
 	  </nav>
                
         <div class="container">          
-            <asp:ListView ID="ListView1" runat="server" >
+            <asp:ListView ID="ListView1" runat="server" OnItemDataBound="ListView1_ItemDataBound" >
                 <ItemTemplate>
                     <div class="list">
                     <table>
                         <tr><td>
-                         <asp:Image ID="prodImg" class="image" runat="server" ImageUrl="images/placeholder.png" /></td></tr>
+                         <asp:Image ID="prodImg" class="image" runat="server" /></td></tr>
                         <tr><td><asp:Label ID="prodID" CssClass="hidden" runat="server" Text='<%#Eval("ID") %>'></asp:Label></td></tr> 
                         <tr><td><b><asp:Label ID="prodName" runat="server" Text='<%#Eval("Name") %>'></asp:Label></b></td></tr>
                         <tr><td><asp:Label ID="des" runat="server" Text='<%#Eval("Description") %>'></asp:Label></td></tr> 
@@ -288,7 +307,36 @@ h6, h2, p {
                     </div>
                 </ItemTemplate>
             </asp:ListView>        
-       
+       </div>
+
+               <div class="notif">
+                   <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                   <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                       <ContentTemplate>
+                           <asp:Panel ID="notifPanel" runat="server" Visible="false">
+                               <asp:Label ID="recipientlbl" CssClass="hidden" runat="server" Text="Label"></asp:Label>
+                               <asp:Label ID="Label1" runat="server" Text="Notifications"></asp:Label><br />
+                                <asp:Label ID="Label4" runat="server" Text="Latest:"></asp:Label><br />
+                                <asp:Label ID="datelbl" runat="server" BackColor="Yellow" ForeColor="#333333"></asp:Label><br />
+                               <asp:Label ID="msglbl" runat="server" BackColor="Yellow" ForeColor="#333333"></asp:Label><br /><br />
+
+                               <asp:GridView ID="GridViewMessage" runat="server" AllowPaging="True" AutoGenerateColumns="False" OnPageIndexChanging="GridViewMessage_PageIndexChanging" PageSize="3" >
+                                   <Columns>
+                                       <asp:TemplateField HeaderText="All Messages">
+                                           <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
+                                           <ItemStyle HorizontalAlign="Left" Height="100px" />
+                                           <ItemTemplate>
+                                               <asp:Label ID="Label2" runat="server" Text='<%# Eval("Date_Sent") %>'></asp:Label><br />
+                                               <asp:Label ID="Label3" runat="server" Text='<%# Eval("Message") %>'></asp:Label>
+                                           </ItemTemplate>
+                                       </asp:TemplateField>
+                                   </Columns>
+                               </asp:GridView>
+                           </asp:Panel>
+                           <asp:Timer ID="Timer1" runat="server" Interval="2000" OnTick="Timer1_Tick"></asp:Timer>
+                       </ContentTemplate>
+                   </asp:UpdatePanel>
+               </div>
     </form>
 
      <script src="js/bootstrap-dropdownhover.min.js"></script>   
