@@ -102,6 +102,7 @@
     <Content Include="css\icomoon.css" />
     <Content Include="css\styles.css" />
     <Content Include="detailsPage.aspx" />
+    <Content Include="dispatching.aspx" />
     <Content Include="editCartItem.aspx" />
     <Content Include="FLC_login.aspx" />
     <Content Include="fonts\flaticon\font\flaticon.css" />
@@ -140,6 +141,7 @@
     <Content Include="products-tbc.aspx" />
     <Content Include="products-toiletDeo.aspx" />
     <Content Include="register.aspx" />
+    <Content Include="testing.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -178,6 +180,13 @@
     </Compile>
     <Compile Include="detailsPage.aspx.designer.cs">
       <DependentUpon>detailsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dispatching.aspx.cs">
+      <DependentUpon>dispatching.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dispatching.aspx.designer.cs">
+      <DependentUpon>dispatching.aspx</DependentUpon>
     </Compile>
     <Compile Include="editCartItem.aspx.cs">
       <DependentUpon>editCartItem.aspx</DependentUpon>
@@ -287,6 +296,13 @@
     </Compile>
     <Compile Include="register.aspx.designer.cs">
       <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="testing.aspx.cs">
+      <DependentUpon>testing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="testing.aspx.designer.cs">
+      <DependentUpon>testing.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

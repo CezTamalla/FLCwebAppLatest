@@ -22,7 +22,7 @@ namespace FLCwebApp.images
                 using (BinaryReader br = new BinaryReader(fs))
                 {
                     byte[] bytes = br.ReadBytes((Int32)fs.Length);
-                    Connection.dbCommand("Update inventory set image_filename='" + filename + "', image='" + bytes + "' where ID='" + id_txt.Text + "'");
+                    Connection.dbCommand("Update inventory set image_filename='" + filename + "', content_type='" + contentType + "', image='" + bytes + "' where ID='" + id_txt.Text + "'");
                     System.Windows.Forms.MessageBox.Show("Successfully Saved.");
 
                 }
