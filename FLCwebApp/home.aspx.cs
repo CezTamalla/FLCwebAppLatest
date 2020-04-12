@@ -19,6 +19,7 @@ namespace FLCwebApp
             if (!this.IsPostBack)
             {
                 BindListview();
+                DataBind();
                 if (Session["userName"] != null)
                 {
                     clientlbl.Text = "Signed in as " + Session["userName"].ToString();

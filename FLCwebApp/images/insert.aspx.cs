@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Odbc;
+using System.Data.OleDb;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -22,7 +24,24 @@ namespace FLCwebApp.images
                 using (BinaryReader br = new BinaryReader(fs))
                 {
                     byte[] bytes = br.ReadBytes((Int32)fs.Length);
-                    Connection.dbCommand("Update inventory set image_filename='" + filename + "', content_type='" + contentType + "', image='" + bytes + "' where ID='" + id_txt.Text + "'");
+
+                    string updateQuery = "Update inventory set image_filename='" + filename + "', content_type='" + contentType + "', image=? where ID='" + id_txt.Text + "'";
+                    // OdbcConnection dbConnection = new OdbcConnection("DSN=FLC");
+                    using (OdbcConnection con = new OdbcConnection("DSN=FLC"))
+                    { 
+                        // create an OdbcCommand and get its parameters
+                        OdbcCommand command = new OdbcCommand(updateQuery);
+                    OdbcParameterCollection parameters = command.Parameters;
+
+                    // add "value" column to parameters, store the long string in it
+                    parameters.Add("value", OdbcType.Image);
+                    parameters["value"].Value = bytes;
+                        con.Open();
+                    // set the command's connection and execute the query
+                    command.Connection = con;
+                    command.ExecuteNonQuery();
+                    }
+                    //Connection.dbCommand("Update inventory set image_filename='" + filename + "', content_type='" + contentType + "', image='" + bytes + "' where ID='" + id_txt.Text + "'");
                     System.Windows.Forms.MessageBox.Show("Successfully Saved.");
 
                 }
