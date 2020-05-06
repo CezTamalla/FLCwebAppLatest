@@ -26,6 +26,7 @@ namespace FLCwebApp.images
                     byte[] bytes = br.ReadBytes((Int32)fs.Length);
 
                     string updateQuery = "Update inventory set image_filename='" + filename + "', content_type='" + contentType + "', image=? where ID='" + id_txt.Text + "'";
+
                     // OdbcConnection dbConnection = new OdbcConnection("DSN=FLC");
                     using (OdbcConnection con = new OdbcConnection("DSN=FLC"))
                     { 
@@ -35,14 +36,16 @@ namespace FLCwebApp.images
 
                     // add "value" column to parameters, store the long string in it
                     parameters.Add("value", OdbcType.Image);
-                    parameters["value"].Value = bytes;
+                        parameters["value"].Value = bytes;
                         con.Open();
                     // set the command's connection and execute the query
-                    command.Connection = con;
-                    command.ExecuteNonQuery();
+                        command.Connection = con;
+                        command.ExecuteNonQuery();
                     }
-                    //Connection.dbCommand("Update inventory set image_filename='" + filename + "', content_type='" + contentType + "', image='" + bytes + "' where ID='" + id_txt.Text + "'");
-                    System.Windows.Forms.MessageBox.Show("Successfully Saved.");
+
+                    // Connection.dbCommand("Update inventory set image_filename='" + filename + "', content_type='" + contentType + "', image='" + bytes + "' where ID='" + id_txt.Text + "'");
+                    Label1.Visible = true;
+                    Label1.Text = "Image Saved.";
 
                 }
 

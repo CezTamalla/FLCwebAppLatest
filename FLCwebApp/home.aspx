@@ -58,7 +58,7 @@
         }
         .image {
             width: 238px;
-            height: 170px;
+            height: 320px;
         }
         .list {
            display: inline-block;
