@@ -113,8 +113,13 @@
     <Content Include="fonts\open-iconic\open-iconic.svg" />
     <Content Include="Global.asax" />
     <Content Include="home.aspx" />
-    <Content Include="images\slide2.png" />
-    <Content Include="images\slide2_2.png" />
+    <Content Include="images\chatbot.jpg" />
+    <Content Include="images\delivery_truck.png" />
+    <Content Include="images\order.png" />
+    <Content Include="images\prod6.png" />
+    <Content Include="images\slide1_3.png" />
+    <Content Include="images\slide2_3.png" />
+    <Content Include="images\slide3_3.png" />
     <Content Include="images\toilet1.png" />
     <Content Include="images\user.png" />
     <Content Include="js\bootstrap.bundle.js" />

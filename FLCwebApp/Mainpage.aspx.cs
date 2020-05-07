@@ -28,19 +28,18 @@ namespace FLCwebApp
             {
                 HyperLinklogin.Visible = true;
             }
-            this.BindListview();
+        this.BindListview();
         }
     }
     private void BindListview()
+{
+}
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
     {
-    
     }
 
-    protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
-    {
-    }
-
-    protected void viewDetails(object sender, EventArgs e)
+        protected void viewDetails(object sender, EventArgs e)
     {
         ListViewDataItem lv = ((sender as Button).NamingContainer as ListViewDataItem);
         if (lv != null)
@@ -60,7 +59,7 @@ namespace FLCwebApp
 
     }
 
-    public void LinkButton_Click(Object sender, EventArgs e)
+        public void LinkButton_Click(Object sender, EventArgs e)
     {
         Session.Abandon();
         Request.Cookies.Clear();
@@ -74,6 +73,40 @@ namespace FLCwebApp
             Response.Redirect((string)refUrl);
         }
     }
-}
-}
 
+        public void LBproductsAll_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("home.aspx");
+        }
+
+        public void LBalcohol_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("products-alcohol.aspx");
+        }
+
+        public void LBglassCleaner_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("products-glassCleaner.aspx");
+        }
+
+        public void LBlaundryBleach_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("products-laundryBleach.aspx");
+        }
+
+        public void LBtbc_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("products-tbc.aspx");
+        }
+
+        public void LBtoiletDeo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("products-toiletDeo.aspx");
+        }
+
+        public void LBfood_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("products-food.aspx");
+        }
+    }
+}

@@ -75,5 +75,39 @@ namespace FLCwebApp
                 Response.Redirect((string)refUrl);
             }
         }
+        public void LBproductsAll_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("home.aspx");
+        }
+
+        public void LBalcohol_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("products-alcohol.aspx");
+        }
+
+        public void LBglassCleaner_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("products-glassCleaner.aspx");
+        }
+
+        public void LBlaundryBleach_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("products-laundryBleach.aspx");
+        }
+
+        public void LBtbc_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("products-tbc.aspx");
+        }
+
+        public void LBtoiletDeo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("products-toiletDeo.aspx");
+        }
+
+        public void LBfood_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("products-food.aspx");
+        }
     }
 }

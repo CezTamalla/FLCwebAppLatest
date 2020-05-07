@@ -82,7 +82,7 @@ namespace FLCwebApp
                     smtp.Timeout = 90000;
                 }
                 smtp.Send(from, to, mail_subject, mail_message);
-                confirm.Text = "Thank you for your email!";
+                confirm.Text = "Your message has been sent. Thank you for contacting us! We'll get back to you shortly.";
 
                 txt_name.Text = " ";
                 txt_email.Text = " ";
@@ -95,6 +95,40 @@ namespace FLCwebApp
                confirm.Text = "Something went wrong! Please try again";
                confirm.ForeColor = Color.Red;
            }
+        }
+        public void LBproductsAll_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("home.aspx");
+        }
+
+        public void LBalcohol_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("products-alcohol.aspx");
+        }
+
+        public void LBglassCleaner_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("products-glassCleaner.aspx");
+        }
+
+        public void LBlaundryBleach_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("products-laundryBleach.aspx");
+        }
+
+        public void LBtbc_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("products-tbc.aspx");
+        }
+
+        public void LBtoiletDeo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("products-toiletDeo.aspx");
+        }
+
+        public void LBfood_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("products-food.aspx");
         }
     }
 }
