@@ -28,7 +28,8 @@ namespace FLCwebApp.images
                     string updateQuery = "Update inventory set image_filename='" + filename + "', content_type='" + contentType + "', image=? where ID='" + id_txt.Text + "'";
 
                     // OdbcConnection dbConnection = new OdbcConnection("DSN=FLC");
-                    using (OdbcConnection con = new OdbcConnection("DSN=FLC"))
+                    using (
+                        OdbcConnection con = new OdbcConnection("DSN=FLC"))
                     { 
                         // create an OdbcCommand and get its parameters
                         OdbcCommand command = new OdbcCommand(updateQuery);

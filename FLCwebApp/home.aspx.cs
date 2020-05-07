@@ -89,6 +89,7 @@ namespace FLCwebApp
            }
         }
 
+        // This is for Logout LinkButton 
         public void LinkButton_Click(Object sender, EventArgs e)
         {
             Session.Abandon();
@@ -139,6 +140,7 @@ namespace FLCwebApp
             Response.Redirect("products-food.aspx");
         }
 
+    // This is to convert bytes into image
         protected void ListView1_ItemDataBound(object sender, ListViewItemEventArgs e)
         {
             if (e.Item.ItemType == ListViewItemType.DataItem)

@@ -342,7 +342,7 @@ h6, h2, p {
                     <div class="list">
                     <table>
                         <tr><td>
-                         <asp:Image ID="prodImg" class="image" runat="server" ImageUrl="images/placeholder.png" /></td></tr>
+                         <asp:Image ID="prodImg" class="image" runat="server" /></td></tr>
                         <tr><td><asp:Label ID="prodID" CssClass="hidden" runat="server" Text='<%#Eval("ID") %>'></asp:Label></td></tr> 
                         <tr><td><b><asp:Label ID="prodName" runat="server" Text='<%#Eval("Name") %>'></asp:Label></b></td></tr>
                         <tr><td><asp:Label ID="des" runat="server" Text='<%#Eval("Description") %>'></asp:Label></td></tr> 

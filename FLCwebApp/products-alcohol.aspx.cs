@@ -66,6 +66,16 @@ namespace FLCwebApp
             ListView1.DataBind();
         }
 
+        protected void ListView1_ItemDataBound(object sender, ListViewItemEventArgs e)
+        {
+            if (e.Item.ItemType == ListViewItemType.DataItem)
+            {
+                byte[] bytes = (byte[])(e.Item.DataItem as DataRowView)["image"];
+                string base64String = Convert.ToBase64String(bytes, 0, bytes.Length);
+                (e.Item.FindControl("prodImg") as Image).ImageUrl = "data:image/png;base64," + base64String;
+            }
+        }
+
         protected void viewDetails(object sender, EventArgs e)
         {
             ListViewDataItem lv = ((sender as Button).NamingContainer as ListViewDataItem);
